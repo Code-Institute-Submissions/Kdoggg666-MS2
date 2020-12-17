@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/arcade.jpg");
+}
+
+.row {
+    margin-top: 50px;
+}
+
+/* -------------------- Game icons --------- */
+.banner {
+    text-align: center;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+body .banner h1 {
+    font-size: 80px;
+    color: beige;
+}
+
+body .banner p {
+    font-size: 40px;
+    color: bisque;
+}
+
+.game-icon {
+    
+    text-align: center;
+    color: black;
+    max-width: 300px;
+    height: 300px;
+    margin: 10px;
+
+}
+
+.hover {
+    transform: scale(1.1);
+}
+
+
+/* ----------- Game Icon Backgrounds ------- */ 
+
+.memory {
+    background: url("/assets/img/memory.jpg");
+    background-size: 300px 300px;
+}
+
+.snake {
+    background: url("/assets/img/snake.png");
+    background-size: 300px 300px;
+    color: white;
+}
+
+.drum-kit {
+    background: url("/assets/img/drum-kit.jpg");
+    background-size: 300px 300px;
+    color: white;
+}
+
+.flappy-bird {
+    background: url("/assets/img/flappy-bird.jpg");
+    background-size: 300px 300px;
+    
+}
+
+.simon-says {
+    background: url("/assets/img/simon-says.png");
+    background-size: 300px 300px;
+    color: white;
+}
+
+.clock {
+    background: url("/assets/img/clock.jpg");
+    background-size: 300px 300px;
+    color: white;
+}
