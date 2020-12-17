@@ -86,3 +86,14 @@ body .banner p {
     background-size: 300px 300px;
     color: white;
 }
+
+/* ----------- Audio Play-pause button ------- */
+
+.play-button {
+    font-size: 100px;
+    color: #B399D4;
+    margin-left: 0px;
+    width: 100%;
+    padding-left: 0px;
+
+}

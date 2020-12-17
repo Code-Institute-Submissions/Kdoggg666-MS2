@@ -37,3 +37,31 @@ $("#simon-says").click(function() {
 $("#clock").click(function() {
      window.location = "clock.html";
 });
+
+
+// ------------ Play Audio ---------------------------
+
+
+// some code taken from mikael coker on https://stackoverflow.com/questions/42492313/how-to-use-javascript-to-control-audio-element
+
+$('.play').click(function() {
+ var audio = document.getElementById('audio');
+ 
+ 
+   if (audio.paused) {
+      audio.play();
+      $(this).removeClass("fa fa-play").addClass("fa fa-pause");
+    } else {
+      audio.pause();
+      $(this).removeClass("fa fa-pause").addClass("fa fa-play");
+    }
+    audio.addEventListener('ended',function() {
+      $(this).removeClass("fa fa-pause").addClass("fa fa-play");
+    });
+
+    audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+  
+});
