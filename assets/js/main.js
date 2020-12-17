@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+    console.log("I'm Ready!");
+});
+
 // ----------- Game icons -----------
 
 $(".game-icon").mouseenter(function() {
