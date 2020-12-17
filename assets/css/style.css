@@ -53,36 +53,36 @@ body .banner p {
 /* ----------- Game Icon Backgrounds ------- */ 
 
 .memory {
-    background: url("/assets/img/memory.jpg");
+    background: url("../img/memory.jpg");
     background-size: 300px 300px;
 }
 
 .snake {
-    background: url("/assets/img/snake.png");
+    background: url("../img/snake.png");
     background-size: 300px 300px;
     color: white;
 }
 
 .drum-kit {
-    background: url("/assets/img/drum-kit.jpg");
+    background: url("../img/drum-kit.jpg");
     background-size: 300px 300px;
     color: white;
 }
 
 .flappy-bird {
-    background: url("/assets/img/flappy-bird.jpg");
+    background: url("../img/flappy-bird.jpg");
     background-size: 300px 300px;
     
 }
 
 .simon-says {
-    background: url("/assets/img/simon-says.png");
+    background: url("../img/simon-says.png");
     background-size: 300px 300px;
     color: white;
 }
 
 .clock {
-    background: url("/assets/img/clock.jpg");
+    background: url("../img/clock.jpg");
     background-size: 300px 300px;
     color: white;
 }

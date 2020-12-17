@@ -9,6 +9,8 @@ add bacground and text to image and have as button background
 
 bugs - 
 *fix mouse enter bug when mouse over h1 removes the mouse over effect. 
+*background images for divs showing in python server preview but not in github live page or gitpod preview - fixed by changing relative path.
+
 
 memory game page -
 add bacground and text to image and have as button background
