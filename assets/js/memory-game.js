@@ -7,7 +7,11 @@ $(".back-to-home").mouseout(function() {
     $(this).css("outline", "none").removeClass("hover");
 });
 
-// ------ Back Button --------
+$(".back-to-home").click(function() {
+     window.location = "index.html";
+});
+
+// ------ Start game button --------
 $(".start-game-memory").mouseenter(function() {
     $(this).css("outline", "3px solid yellow").addClass("hover");
 });

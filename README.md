@@ -1,11 +1,14 @@
 
 add to home - 
-Music loop
-mute button
 change banner style
 Fonts
 change memory game image to a screenshot of my memory game. 
 add bacground and text to image and have as button background
+
+
+improve for home - 
+Music loop
+play/pause button
 
 bugs - 
 *fix mouse enter bug when mouse over h1 removes the mouse over effect. 
