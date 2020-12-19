@@ -162,11 +162,11 @@ class MixOrMatch {
         }
         // Function written by me to give a out of 3 star rating. 
         finalScore() {
-            if (this.ticker.innerText > 60 && !this.ticker.innerText <= 59) 
+            if (this.ticker.innerText >= 60) 
                 document.getElementById("winner").insertAdjacentHTML("beforeend",  "<br> You get Three Stars! <br>" + "<i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>");
-             else if (this.ticker.innerText > 40 && !this.ticker.innerText <= 39) 
+            else if (this.ticker.innerText >= 40) 
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<i class='fas fa-star'></i><i class='fas fa-star'></i>");
-            else if (this.ticker.innerText > 30 && !this.ticker.innerText <= 29) 
+            else if (this.ticker.innerText >= 30) 
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<i class='fas fa-star'></i>");
             else
                  document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get no Stars!"); 
