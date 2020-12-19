@@ -134,6 +134,7 @@ class MixOrMatch {
     }
     victory() {
         this.reportTime();
+        this.finalScore();
         clearInterval(this.countDown);
         this.audioController.victory();
         document.getElementById('victory-text').classList.add('visible');
@@ -143,11 +144,25 @@ class MixOrMatch {
         
         }
         
+        // Function written by me to add remaining time and amount of flips to victory overlay
         reportTime() {
             let totalFlips = this.ticker.innerText;
             let totalTime = this.timer.innerText;
-            document.getElementById("winner").insertAdjacentHTML('beforeend', " You finished in " + totalTime + " seconds and " + totalFlips + " card flips!" );
+            document.getElementById("winner").insertAdjacentHTML('beforeend', " You finished with " + totalTime + " seconds remaining and used " + totalFlips + " card flips!" );
 
+        }
+        // Function written by me to give a out of 3 star rating. 
+        finalScore() {
+            if (this.ticker.innerText > 60 && this.timer.innerText < 40) 
+                document.getElementById("winner").insertAdjacentHTML("beforeend",  "<br> You get Three Stars! <br>" + "<i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>");
+             else if (this.ticker.innerText > 40 && this.timer.innerText < 50) 
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<i class='fas fa-star'></i><i class='fas fa-star'></i>");
+            else if (this.ticker.innerText > 30 && this.timer.innerText < 70) 
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "You get one Star! <br>" + "<i class='fas fa-star'></i>");
+            else
+                 document.getElementById("winner").insertAdjacentHTML("beforeend", "You get no Stars!"); 
+
+                
         }
 
     // Fisher-Yates shuffle method      
