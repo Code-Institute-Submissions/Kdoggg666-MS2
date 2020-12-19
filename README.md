@@ -34,6 +34,8 @@ add bacground and text to image and have as button background
 
 
 
+
+
 img src - 
 arcade wall paper from https://www.xtrafondos.com/en/wallpaper/3840x2160/6342-boy-playing-arcade.html
 snake game image from https://www.kickgadget.com/play-snake/
@@ -42,3 +44,4 @@ simon says - https://www.microsoft.com/en-us/p/simon-says/9wzdncrcx3f0?activetab
 clock - http://www.reidsitaly.com/places/general/topics/the-metric-system/24-hour-clock/
 flappy bird - https://mana-fun.com/preview-flappy-bird.htm
 memory background - https://wallpaperaccess.com/reptile
+arcade favicon - https://www.wayfair.com/furniture/pdx/arcade-1up-upright-arcade-game-ljhy1035.html
