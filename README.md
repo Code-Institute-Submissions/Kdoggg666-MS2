@@ -25,6 +25,8 @@ bugs -
 responsiveness in home
 responsiveness of overlays - add media queery
 
+if statement to check remaining time and assign stars - first if statement always true no matter what time. tried logging current time to console to see what im checking against. tried googling loops. fixed by double checking syntax and rewriting the code and testing.
+
 
 memory game page -
 add bacground and text to image and have as button background
@@ -37,6 +39,7 @@ add bacground and text to image and have as button background
 
 add all card scr
 img src - 
+card background - https://www.amazon.com/Journal-Green-dragon-scales-notebook/dp/1534828729#ace-g6002737843
 arcade wall paper from https://www.xtrafondos.com/en/wallpaper/3840x2160/6342-boy-playing-arcade.html
 snake game image from https://www.kickgadget.com/play-snake/
 drumkit - https://www.musikalessons.com/blog/2016/06/basic-drum-beats-for-rock/

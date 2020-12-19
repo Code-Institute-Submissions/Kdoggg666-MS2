@@ -69,7 +69,7 @@ class MixOrMatch {
             card.classList.remove('matched');
         });
     }
-// function that flips the cards
+    // function that flips the cards
     flipCard(card) {
         if (this.canFlipCard(card)) {
             this.audioController.flip();
@@ -89,12 +89,12 @@ class MixOrMatch {
     checkForCardMatch(card) {
         if (this.getCardType(card) === this.getCardType(this.cardToCheck))
             this.cardMatch(card, this.cardToCheck);
-        else 
+        else
             this.cardMisMatch(card, this.cardToCheck);
 
-            this.cardToCheck = null;
+        this.cardToCheck = null;
     }
-    
+
     // function that handles if two cards are a match
     cardMatch(card1, card2) {
         this.matchedCards.push(card1);
@@ -102,10 +102,10 @@ class MixOrMatch {
         card1.classList.add('matched');
         card2.classList.add('matched');
         this.audioController.match();
-        if(this.matchedCards.length === this.cardsArray.length)
-            this.victory(); 
+        if (this.matchedCards.length === this.cardsArray.length)
+            this.victory();
 
-        
+
     }
     // function that handles if two cards arent a match
 
@@ -127,9 +127,9 @@ class MixOrMatch {
         return setInterval(() => {
             this.timeRemaining--;
             this.timer.innerText = this.timeRemaining;
-            if (this.timeRemaining === 0) 
+            if (this.timeRemaining === 0)
                 this.gameOver();
-            
+
         }, 1000);
     }
     // --------- game over function ---------
@@ -142,37 +142,31 @@ class MixOrMatch {
 
     // plays the victory sound and shows the victory overlay
     victory() {
-        this.reportTime();
-        this.finalScore();
+        this.reportScore();
         clearInterval(this.countDown);
         this.audioController.victory();
         document.getElementById('victory-text').classList.add('visible');
         this.hideCards();
-        
-            
-        
-        }
-        
-        // Function written by me to add remaining time and amount of flips to victory overlay
-        reportTime() {
-            let totalFlips = this.ticker.innerText;
-            let totalTime = this.timer.innerText;
-            document.getElementById("winner").insertAdjacentHTML('beforeend', " You finished with " + totalTime + " seconds remaining and used " + totalFlips + " card flips!" );
+    }
 
+    // Function written by me to add remaining time and amount of flips to victory overlay and to give a out of 3 star rating. 
+    reportScore() {
+        let totalFlips = this.ticker.innerText;
+        let totalTime = this.timer.innerText;
+        document.getElementById("winner").insertAdjacentHTML('beforeend', " You finished with " + totalTime + " seconds remaining and used " + totalFlips + " card flips!");
+        if (totalTime > 60) {
+            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>");
+            console.log(this.ticker.innerText);
+        } else if (totalTime > 40) {
+            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<br><i class='fas fa-star'></i><i class='fas fa-star'></i>");
+        } else if (totalTime > 20) {
+            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star'></i>");   
+        } else {
+            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>");
         }
-        // Function written by me to give a out of 3 star rating. 
-        finalScore() {
-            if (this.ticker.innerText >= 60) 
-                document.getElementById("winner").insertAdjacentHTML("beforeend",  "<br> You get Three Stars! <br>" + "<i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>");
-            else if (this.ticker.innerText >= 40) 
-                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<i class='fas fa-star'></i><i class='fas fa-star'></i>");
-            else if (this.ticker.innerText >= 30) 
-                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<i class='fas fa-star'></i>");
-            else
-                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get no Stars!"); 
-
-                
-        }
+    }
+    
+    
 
     // Fisher-Yates shuffle method      - wikipedia
     shuffleCards() {
@@ -186,7 +180,7 @@ class MixOrMatch {
     //checks to see if a card is busy or can be flipped
     canFlipCard(card) {
         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
-         
+
     }
 }
 
@@ -209,7 +203,7 @@ function ready() {
             overlay.classList.remove('visible');
             game.startGame();
             let audioController = new AudioController();
-            
+
         });
     });
     // -------- add event listener for each card
