@@ -1,7 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monda&display=swap');
 
 * {
     box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Ranchers", sans-serif;
+}
+
+p {
+    font-family: "Monda", sans-serif;
 }
 
 body {
@@ -24,16 +36,22 @@ body {
     background-color: beige;
     border: 2px solid black;
     border-radius: 5%;
-    font-family: "Bungee", sans-serif;
+    font-family: "Ranchers", sans-serif;
     text-align: center;
     margin: 10px 0px 10px 0px;
+    background-color: #41cb2c;
+    box-shadow: 2px 2px black;
+    text-decoration: none;
 
 }
 
 .back-to-home p {
-    margin: 0;
+    margin-top: 10px;
     padding: 0;
+    text-shadow: 1px 1px black;
+    color: black;
 }
+
 
 .hover {
     transform: scale(1.1);
@@ -54,14 +72,16 @@ body {
 /* --------- heading -------------------*/
 
 .page-title {
-    color: grey;
+    color: #28b213;
     font-size: 6em;
     text-align: center;
+    text-shadow: 2px 2px black;
 }
 
 .game-info {
     font-size: 4em;
-    color: grey;
+    color: #28b213;
+    text-shadow: 2px 2px black;
 }
 
 
@@ -108,22 +128,7 @@ body {
     transition: transform 500ms ease-in-out;
 }
 
-.overlay-text {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    color: hotpink;
-}
 
-.overlay-text-small {
-    font-size: .3em;
-}
 
 
 
@@ -180,6 +185,32 @@ body {
 
 .card-match .card-value {
     animation: dance 1s linear infinite 500ms;
+}
+
+/* ---------------- Overlays ---------------*/
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #41cb2c;
+    font-family: "Ranchers", sans-serif;
+    cursor: pointer;
+    text-shadow: 2px 2px black;
+}
+
+.overlay-text-small {
+    text-align: center;
+    font-size: .2em;
+    font-family: "Monda", sans-serif;
+    color: #34a223;
+    
 }
 
 @keyframes dance {

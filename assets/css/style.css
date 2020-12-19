@@ -17,31 +17,34 @@ body {
     text-align: center;
     height: 300px;
     background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
 }
 
 body .banner h1 {
     font-size: 80px;
     color: beige;
-    font-family: "Bungee Shade", sans-serif ;
+    font-family: "Bungee Shade", sans-serif;
+    
+    
 }
 
 body .banner p {
     margin-top: 40px;
     font-size: 40px;
     color: bisque;
-    font-family: "Indie Flower", sans-serif ;
+    font-family: "Indie Flower", sans-serif;
 }
 
 /* -------------------- Game icons --------- */
 
 .game-icon {
-    
+
     text-align: center;
     color: black;
     max-width: 300px;
     height: 300px;
     margin: 10px;
-    font-family: "Bungee", sans-serif ;
+    font-family: "Bungee", sans-serif;
     font-weight: 700;
 }
 
@@ -50,17 +53,20 @@ body .banner p {
 }
 
 
-/* ----------- Game Icon Backgrounds ------- */ 
+/* ----------- Game Icon Backgrounds ------- */
 
 .memory {
-    background: url("../img/memory.jpg");
+    background: url("../img/snake-background.jpg");
     background-size: 300px 300px;
+    color: #41cb2c;
+    text-shadow: 1px 1px black;
 }
 
 .snake {
     background: url("../img/snake.png");
     background-size: 300px 300px;
-    color: white;
+    color: #fafafa;
+    text-shadow: 1px 1px black;
 }
 
 .drum-kit {
@@ -72,7 +78,7 @@ body .banner p {
 .flappy-bird {
     background: url("../img/flappy-bird.jpg");
     background-size: 300px 300px;
-    
+
 }
 
 .simon-says {

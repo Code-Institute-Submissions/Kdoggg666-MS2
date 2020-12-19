@@ -4,15 +4,26 @@ change banner style
 Fonts
 change memory game image to a screenshot of my memory game. 
 add bacground and text to image and have as button background
+background music volume
 
 
 improve for home - 
 Music loop
 play/pause button
 
+add to memory game - 
+change images.
+change audio
+show score? 
+credit sounds to me in presonus studio one.
+fix back to home button
+
+
 bugs - 
 *fix mouse enter bug when mouse over h1 removes the mouse over effect. 
 *background images for divs showing in python server preview but not in github live page or gitpod preview - fixed by changing relative path.
+responsiveness in home
+responsiveness of overlays - add media queery
 
 
 memory game page -
