@@ -133,12 +133,22 @@ class MixOrMatch {
         this.hideCards();
     }
     victory() {
+        this.reportTime();
         clearInterval(this.countDown);
         this.audioController.victory();
         document.getElementById('victory-text').classList.add('visible');
         this.hideCards();
-    }
+        
+            
+        
+        }
+        
+        reportTime() {
+            let totalFlips = this.ticker.innerText;
+            let totalTime = this.timer.innerText;
+            document.getElementById("winner").insertAdjacentHTML('beforeend', " You finished in " + totalTime + " seconds and " + totalFlips + " card flips!" );
 
+        }
 
     // Fisher-Yates shuffle method      
     shuffleCards() {
