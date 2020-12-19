@@ -33,7 +33,7 @@ class AudioController {
         this.gameOverSound.play();
     }
 }
-
+// object that is used to construct new functions
 class MixOrMatch {
     constructor(totalTime, cards) {
         this.cardsArray = cards;
@@ -44,6 +44,7 @@ class MixOrMatch {
         this.audioController = new AudioController();
 
     }
+    // Start the game function
     startGame() {
         this.cardToCheck = null;
         this.totalClicks = 0;
@@ -60,13 +61,15 @@ class MixOrMatch {
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
     }
+
+    // function that flips all the cards face down. 
     hideCards() {
         this.cardsArray.forEach(card => {
             card.classList.remove('visible');
             card.classList.remove('matched');
         });
     }
-
+// function that flips the cards
     flipCard(card) {
         if (this.canFlipCard(card)) {
             this.audioController.flip();
@@ -81,6 +84,8 @@ class MixOrMatch {
 
         }
     }
+
+    // function that checks if two cards match
     checkForCardMatch(card) {
         if (this.getCardType(card) === this.getCardType(this.cardToCheck))
             this.cardMatch(card, this.cardToCheck);
@@ -89,7 +94,8 @@ class MixOrMatch {
 
             this.cardToCheck = null;
     }
-
+    
+    // function that handles if two cards are a match
     cardMatch(card1, card2) {
         this.matchedCards.push(card1);
         this.matchedCards.push(card2);
@@ -101,6 +107,7 @@ class MixOrMatch {
 
         
     }
+    // function that handles if two cards arent a match
 
     cardMisMatch(card1, card2) {
         this.busy = true;
@@ -110,7 +117,7 @@ class MixOrMatch {
             this.busy = false;
         }, 1000);
     }
-
+    // gets the card class and gets its array position
     getCardType(card) {
         return card.getElementsByClassName('card-value')[0].src;
     }
@@ -132,6 +139,8 @@ class MixOrMatch {
         document.getElementById('game-over-text').classList.add('visible');
         this.hideCards();
     }
+
+    // plays the victory sound and shows the victory overlay
     victory() {
         this.reportTime();
         this.finalScore();
@@ -153,19 +162,19 @@ class MixOrMatch {
         }
         // Function written by me to give a out of 3 star rating. 
         finalScore() {
-            if (this.ticker.innerText > 60 && this.timer.innerText < 40) 
+            if (this.ticker.innerText > 60 && !this.ticker.innerText <= 59) 
                 document.getElementById("winner").insertAdjacentHTML("beforeend",  "<br> You get Three Stars! <br>" + "<i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>");
-             else if (this.ticker.innerText > 40 && this.timer.innerText < 50) 
+             else if (this.ticker.innerText > 40 && !this.ticker.innerText <= 39) 
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<i class='fas fa-star'></i><i class='fas fa-star'></i>");
-            else if (this.ticker.innerText > 30 && this.timer.innerText < 70) 
-                document.getElementById("winner").insertAdjacentHTML("beforeend", "You get one Star! <br>" + "<i class='fas fa-star'></i>");
+            else if (this.ticker.innerText > 30 && !this.ticker.innerText <= 29) 
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<i class='fas fa-star'></i>");
             else
-                 document.getElementById("winner").insertAdjacentHTML("beforeend", "You get no Stars!"); 
+                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get no Stars!"); 
 
                 
         }
 
-    // Fisher-Yates shuffle method      
+    // Fisher-Yates shuffle method      - wikipedia
     shuffleCards() {
         for (let i = this.cardsArray.length - 1; i > 0; i--) {
             let randIndex = Math.floor(Math.random() * (i + 1));
@@ -174,7 +183,7 @@ class MixOrMatch {
         }
     }
 
-
+    //checks to see if a card is busy or can be flipped
     canFlipCard(card) {
         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
          
