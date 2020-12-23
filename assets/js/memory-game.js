@@ -1,13 +1,15 @@
+// ------ Memory game - JS totorial by PortEXE on  https://www.youtube.com/watch?v=3uuQ3g92oPQ --------
+
 // ------- Audio controller --------
 
 class AudioController {
     constructor() {
-        this.bgMusic = new Audio('/assets/audio/reptile-hunt/bgMusic.mp3');
-        this.flipSound = new Audio('/assets/audio/reptile-hunt/flip.wav');
-        this.matchSound = new Audio('/assets/audio/reptile-hunt/match.wav');
-        this.victorySound = new Audio('/assets/audio/reptile-hunt/victory.wav');
-        this.gameOverSound = new Audio('/assets/audio/reptile-hunt/gameover.mp3');
-        this.bgMusic.volume = 0.5;
+        this.bgMusic = new Audio("/assets/audio/reptile-hunt/bgMusic.mp3");
+        this.flipSound = new Audio("/assets/audio/reptile-hunt/flip.wav");
+        this.matchSound = new Audio("/assets/audio/reptile-hunt/match.wav");
+        this.victorySound = new Audio("/assets/audio/reptile-hunt/victory.wav");
+        this.gameOverSound = new Audio("/assets/audio/reptile-hunt/gameover.mp3");
+        this.bgMusic.volume = 0.2;
         this.bgMusic.loop = true;
 
     }
@@ -46,6 +48,7 @@ class MixOrMatch {
     }
     // Start the game function
     startGame() {
+        this.removeScore()
         this.cardToCheck = null;
         this.totalClicks = 0;
         this.timeRemaining = this.totalTime;
@@ -60,8 +63,18 @@ class MixOrMatch {
         this.hideCards();
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
+
     }
 
+    // written by me to removes score from last round on new game
+    removeScore() {
+        let starsText = document.getElementById('winner');
+        if (starsText = null) {
+            return;
+        } else {
+            document.getElementById('winner').innerHTML = " ";
+        }
+    }
     // function that flips all the cards face down. 
     hideCards() {
         this.cardsArray.forEach(card => {
@@ -147,6 +160,7 @@ class MixOrMatch {
         this.audioController.victory();
         document.getElementById('victory-text').classList.add('visible');
         this.hideCards();
+
     }
 
     // Function written by me to add remaining time and amount of flips to victory overlay and to give a out of 3 star rating. 
@@ -160,13 +174,13 @@ class MixOrMatch {
         } else if (totalTime > 40) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<br><i class='fas fa-star'></i><i class='fas fa-star'></i>");
         } else if (totalTime > 20) {
-            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star'></i>");   
+            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star'></i>");
         } else {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>");
         }
     }
-    
-    
+
+
 
     // Fisher-Yates shuffle method      - wikipedia
     shuffleCards() {
@@ -255,4 +269,3 @@ function ready() {
 // $(this).css("outline", "none").removeClass("hover");
 //});
 
-// ------ Memory game - JS totorial by PortEXE on  https://www.youtube.com/watch?v=3uuQ3g92oPQ --------
