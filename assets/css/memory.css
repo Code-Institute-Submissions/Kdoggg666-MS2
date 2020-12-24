@@ -10,6 +10,7 @@ h2,
 h3,
 h4 {
     font-family: "Ranchers", sans-serif;
+    letter-spacing: 5px;
 }
 
 p {
@@ -19,7 +20,7 @@ p {
 body {
     margin: 0;
     padding: 20px;
-    background: url("/assets/img/snake-background.jpg") no-repeat center center fixed;
+    background: url("../img/snake-background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -67,39 +68,46 @@ body {
 
 }
 
+/*--------- Mute button ---------*/ 
+
+.mute-button {
+    color: #fafafa;
+    font-size: 4em;
+    float: right;
+    top: 100px;
+    right: 100px;
+
+}
 /* --------- Memory Game ------------- */
 
 /* --------- heading -------------------*/
-
 .page-title {
     color: #28b213;
     font-size: 6em;
     text-align: center;
     text-shadow: 2px 2px black;
 }
-
 .game-info {
     font-size: 4em;
     color: #28b213;
     text-shadow: 2px 2px black;
 }
 
-
 /* --------- Cards -------------------*/
-
 .game-info-container {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
 }
-
 .card {
     position: relative;
-    
     height: 175px;
     width: 125px;
 }
-
+div.card {
+    background-color: transparent;
+    border: none;
+}
 .game-container {
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -107,13 +115,10 @@ body {
     margin: 50px;
     justify-content: center;
     perspective: 500px;
-
 }
-
 .card:hover {
     cursor: pointer;
 }
-
 .card-face {
     position: absolute;
     width: 125px;
@@ -127,12 +132,6 @@ body {
     border: 1px solid orange;
     transition: transform 500ms ease-in-out;
 }
-
-
-
-
-
-
 @keyframes overlay-grow {
     from {
         background-color: rgba(0, 0, 0, 0);
@@ -143,45 +142,28 @@ body {
         font-size: 10em;
     }
 }
-    
-
-
-
 .visible .card-back {
     transform: rotateY(-180deg);
     width: 125px;
     height: 175px;
 }
-
 .visible .card-front {
     transform: rotateY(0);
     width: 125px;
     height: 175px;
-    
 }
-
 .card-back {
     background-color: black;
-    border-color: orange;
-    
+    border-color: orange;   
 }
-
-
 .card-front {
     transform: rotateY(180deg);
-    overflow: hidden;
-    
+    overflow: hidden; 
 }
-
 .card-front img {
-    overflow: hidden;
-    
+    overflow: hidden;  
 }
-
-
-
 /* ---------------- Overlays ---------------*/
-
 .overlay-text {
     display: none;
     position: fixed;
@@ -197,37 +179,29 @@ body {
     cursor: pointer;
     text-shadow: 2px 2px black;
 }
-
 .overlay-text-small {
     text-align: center;
     font-size: .2em;
     font-family: "Monda", sans-serif;
-    color: #34a223;
-    
+    color: #34a223;   
 }
-
 .overlay-text.visible {
     display: flex;
     flex-direction: column;
     animation: overlay-grow 500ms forwards;
 }
-
 .overlay-text-small i {
     color: yellow;
     font-size: 3em;
 }
-
-
 /*-------  media query -------*/
-
 @media (max-width: 600px) {
     .game-container {
         grid-template-columns: repeat(2, auto);
-
     }
-
     .game-info-container {
         flex-direction: column;
         align-items: center;
     }
 }
+

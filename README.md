@@ -1,38 +1,20 @@
 
-add to home - 
-change banner style
-Fonts
-change memory game image to a screenshot of my memory game. 
-add bacground and text to image and have as button background
-background music volume
-
-
-improve for home - 
-Music loop
-play/pause button
-
 add to memory game - 
-change images.
-change audio
-show score? 
 credit sounds to me in presonus studio one.
-fix back to home button
+add click to try again to victory screen. 
+
 
 
 bugs - 
-*fix mouse enter bug when mouse over h1 removes the mouse over effect. 
 *background images for divs showing in python server preview but not in github live page or gitpod preview - fixed by changing relative path.
-responsiveness in home
 responsiveness of overlays - add media queery
 githubpages not loading assets with error 404. 
 
 fix append to remove appended stars after win multiple times. - fixed with a loop that checks if there is inner html in the victory text and removes it on game start. 
 
 if statement to check remaining time and assign stars - first if statement always true no matter what time. tried logging current time to console to see what im checking against. tried googling loops. fixed by double checking syntax and rewriting the code and testing.
+bootstrap css overriding rules - fixed by making more specific rules
 
-
-memory game page -
-add bacground and text to image and have as button background
 
 
 

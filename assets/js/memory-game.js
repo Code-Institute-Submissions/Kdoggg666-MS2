@@ -34,7 +34,9 @@ class AudioController {
         this.stopMusic();
         this.gameOverSound.play();
     }
+
 }
+
 // object that is used to construct new functions
 class MixOrMatch {
     constructor(totalTime, cards) {
@@ -46,6 +48,9 @@ class MixOrMatch {
         this.audioController = new AudioController();
 
     }
+
+
+
     // Start the game function
     startGame() {
         this.removeScore()
@@ -65,7 +70,6 @@ class MixOrMatch {
         this.ticker.innerText = this.totalClicks;
 
     }
-
     // written by me to removes score from last round on new game
     removeScore() {
         let starsText = document.getElementById('winner');
@@ -94,7 +98,6 @@ class MixOrMatch {
                 this.checkForCardMatch(card);
             else
                 this.cardToCheck = card;
-
         }
     }
 
@@ -168,9 +171,8 @@ class MixOrMatch {
         let totalFlips = this.ticker.innerText;
         let totalTime = this.timer.innerText;
         document.getElementById("winner").insertAdjacentHTML('beforeend', " You finished with " + totalTime + " seconds remaining and used " + totalFlips + " card flips!");
-        if (totalTime > 60) {
+        if (totalTime > 65) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>");
-            console.log(this.ticker.innerText);
         } else if (totalTime > 40) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<br><i class='fas fa-star'></i><i class='fas fa-star'></i>");
         } else if (totalTime > 20) {
@@ -206,10 +208,12 @@ if (document.readyState === "loading") {
     ready();
 }
 
+
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
     let game = new MixOrMatch(100, cards);
+    let muteButton = document.getElementById("mute");
 
     // -------- add event listener for each overlay
     overlays.forEach(overlay => {
@@ -268,4 +272,3 @@ function ready() {
 //$(".start-game-memory").mouseout(function () {
 // $(this).css("outline", "none").removeClass("hover");
 //});
-
