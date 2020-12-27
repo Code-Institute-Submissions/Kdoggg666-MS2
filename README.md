@@ -1,13 +1,13 @@
 
 add to memory game - 
 credit sounds to me in presonus studio one.
-add click to try again to victory screen. 
+validate CSS, html and JS(via jShint)
 
 
 
 bugs - 
 *background images for divs showing in python server preview but not in github live page or gitpod preview - fixed by changing relative path.
-responsiveness of overlays - add media queery
+responsiveness of overlays - added media queery
 githubpages not loading assets with error 404. 
 
 fix append to remove appended stars after win multiple times. - fixed with a loop that checks if there is inner html in the victory text and removes it on game start. 
@@ -15,6 +15,7 @@ fix append to remove appended stars after win multiple times. - fixed with a loo
 if statement to check remaining time and assign stars - first if statement always true no matter what time. tried logging current time to console to see what im checking against. tried googling loops. fixed by double checking syntax and rewriting the code and testing.
 bootstrap css overriding rules - fixed by making more specific rules
 
+match sound not playing after match in short succession - fixed by shortening the audio file and removing silence at the end
 
 
 
