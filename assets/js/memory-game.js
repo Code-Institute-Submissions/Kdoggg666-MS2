@@ -17,15 +17,13 @@ class AudioController {
         this.bgMusic.play();
         this.isPlay = true;
         console.log(this.isPlay);
-        //this.mute.classname = "fas fa-volume-mute";
-        // add the mute class here
+        
     }
     stopMusic() {
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
         this.isPlay = false;
-        //this.mute.classname = "fas fa-play";
-        //add the play class here
+        
     }
     flip() {
         this.flipSound.play();
@@ -41,7 +39,7 @@ class AudioController {
         this.stopMusic();
         this.gameOverSound.play();
     }
-    // function written by me to toggle playing audio
+
 
 }
   
@@ -65,7 +63,7 @@ class MixOrMatch {
 // Start the game function
     startGame() {
         //console.log(this.mute.classList);
-        this.resetPlayButton();
+        //this.resetPlayButton();
         
         this.removeScore();
         this.cardToCheck = null;
@@ -74,7 +72,7 @@ class MixOrMatch {
         this.matchedCards = [];
         this.busy = true;
         setTimeout(() => {
-            this.audioController.startMusic();
+            this.musicCheck();
             this.shuffleCards();
             this.countDown = this.startCountDown();
             this.busy = false;
@@ -83,6 +81,14 @@ class MixOrMatch {
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
        
+    }
+
+    musicCheck() {
+        if (this.mute.classList.contains("fa-play")) {
+                return;
+            } else {
+                this.audioController.startMusic();
+            };
     }
 
     // my code to remove the classes of the play button and return to default
