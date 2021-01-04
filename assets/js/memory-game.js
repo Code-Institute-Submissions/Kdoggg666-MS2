@@ -10,16 +10,19 @@ class AudioController {
         this.gameOverSound = new Audio("/assets/audio/reptile-hunt/gameover.mp3");
         this.bgMusic.volume = 0.2;
         this.bgMusic.loop = true;
-        this.isPlay = false;
+        //my variable to check weather audio is playing
+        this.isPlay;
     }
     startMusic() {
         this.bgMusic.play();
         this.isPlay = true;
+        console.log(this.isPlay);
     }
     stopMusic() {
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
         this.isPlay = false;
+        console.log(this.isPlay);
     }
     flip() {
         this.flipSound.play();
@@ -35,15 +38,15 @@ class AudioController {
         this.stopMusic();
         this.gameOverSound.play();
     }
+    // function written by me to toggle playing audio
     toggleMute() {
         if (this.isPlay === true) {
-            this.stopMusic();
-            this.document.getElementById("mute-button").classList.remove("fa-play").classList.add("fa-pause");
-        } else {
+            this.stopMusic();    
+        } else if (this.isPlay === false) {
             this.startMusic();
-            mute.classList.remove("fa-pause").classList.add("fa-play");
-        }
-    }
+      }
+    
+}
 }
   
 
@@ -56,14 +59,17 @@ class MixOrMatch {
         this.timer = document.getElementById('time-remaining');
         this.ticker = document.getElementById('flips');
         this.audioController = new AudioController();
+        //my variable for mute button
         this.mute = document.getElementById("mute-button");
-        
     }
     
       
 // Start the game function
     startGame() {
-        this.removeScore()
+        console.log(this.mute.classList);
+        this.resetPlayButton();
+        
+        this.removeScore();
         this.cardToCheck = null;
         this.totalClicks = 0;
         this.timeRemaining = this.totalTime;
@@ -78,9 +84,33 @@ class MixOrMatch {
         this.hideCards();
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
-        this.mute.addEventListener('click', () => this.audioController.toggleMute()); 
-        
+        // code written by me to run toggle audio function when the mute button is clicked. 
+        this.mute.addEventListener('click', () => this.muteButtonIcon()); 
     }
+
+    // my code to remove the classes of the play button and return to default
+    resetPlayButton() {
+        this.mute.classname = "";
+        this.mute.classList.add("fa", "fa-volume-mute");
+        console.log(this.mute.classname);
+    }
+
+
+
+// function written by me to change the FA icon between stop/play and call the toggleMute function
+   muteButtonIcon() {
+       if (this.mute.classList.contains("fa-volume-mute") && this.audioController.isPlay === true) {
+           this.mute.classList.remove("fa-volume-mute");
+           this.mute.classList.add("fa-play");
+           this.audioController.toggleMute();
+           console.log("if statement op 1");
+       } else {
+           this.mute.classList.remove("fa-play"); 
+           this.mute.classList.add("fa-volume-mute");
+           this.audioController.toggleMute();
+           console.log("if statement op 2");
+       } 
+   }
 // written by me to removes score from last round on new game
     removeScore() {
         let starsText = document.getElementById('winner');
@@ -164,6 +194,8 @@ class MixOrMatch {
         this.audioController.victory();
         document.getElementById('victory-text').classList.add('visible');
         this.hideCards();
+        
+        
     }
 // Function written by me to add remaining time and amount of flips to victory overlay and to give a out of 3 star rating. 
     reportScore() {
