@@ -17,12 +17,15 @@ class AudioController {
         this.bgMusic.play();
         this.isPlay = true;
         console.log(this.isPlay);
+        //this.mute.classname = "fas fa-volume-mute";
+        // add the mute class here
     }
     stopMusic() {
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
         this.isPlay = false;
-        console.log(this.isPlay);
+        //this.mute.classname = "fas fa-play";
+        //add the play class here
     }
     flip() {
         this.flipSound.play();
@@ -39,14 +42,7 @@ class AudioController {
         this.gameOverSound.play();
     }
     // function written by me to toggle playing audio
-    toggleMute() {
-        if (this.isPlay === true) {
-            this.stopMusic();    
-        } else if (this.isPlay === false) {
-            this.startMusic();
-      }
-    
-}
+
 }
   
 
@@ -61,12 +57,14 @@ class MixOrMatch {
         this.audioController = new AudioController();
         //my variable for mute button
         this.mute = document.getElementById("mute-button");
+         // code written by me to run toggle audio function when the mute button is clicked. 
+        this.mute.addEventListener('click', () => this.muteButtonIcon()); 
     }
     
       
 // Start the game function
     startGame() {
-        console.log(this.mute.classList);
+        //console.log(this.mute.classList);
         this.resetPlayButton();
         
         this.removeScore();
@@ -84,14 +82,13 @@ class MixOrMatch {
         this.hideCards();
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
-        // code written by me to run toggle audio function when the mute button is clicked. 
-        this.mute.addEventListener('click', () => this.muteButtonIcon()); 
+       
     }
 
     // my code to remove the classes of the play button and return to default
-    resetPlayButton() {
+        resetPlayButton() {
         this.mute.classname = "";
-        this.mute.classList.add("fa", "fa-volume-mute");
+        this.mute.classList.add("fas", "fa-volume-mute");
         console.log(this.mute.classname);
     }
 
@@ -99,15 +96,15 @@ class MixOrMatch {
 
 // function written by me to change the FA icon between stop/play and call the toggleMute function
    muteButtonIcon() {
-       if (this.mute.classList.contains("fa-volume-mute") && this.audioController.isPlay === true) {
+       if (this.audioController.isPlay === true) {
            this.mute.classList.remove("fa-volume-mute");
            this.mute.classList.add("fa-play");
-           this.audioController.toggleMute();
+           this.audioController.stopMusic();
            console.log("if statement op 1");
        } else {
            this.mute.classList.remove("fa-play"); 
            this.mute.classList.add("fa-volume-mute");
-           this.audioController.toggleMute();
+           this.audioController.startMusic();
            console.log("if statement op 2");
        } 
    }
