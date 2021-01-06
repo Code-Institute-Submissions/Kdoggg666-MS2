@@ -195,6 +195,11 @@ div.card {
     font-family: "Ranchers", sans-serif;
     cursor: pointer;
     text-shadow: 2px 2px black;
+    text-align: center;
+}
+
+.overlay-text h1 {
+    font-size: 1em;
 }
 .overlay-text-small {
     text-align: center;
@@ -212,7 +217,7 @@ div.card {
     font-size: 3em;
 }
 /*-------  media query -------*/
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .game-container {
         grid-template-columns: repeat(2, auto);
     }
@@ -221,7 +226,12 @@ div.card {
         align-items: center;
     }
     /*--- Overlays ---*/
- 
+    .overlay-text h1{
+        font-size: .2em;
+    }
+    .overlay-text-small {
+        font-size: .1em;
+    }
 }
 
 
