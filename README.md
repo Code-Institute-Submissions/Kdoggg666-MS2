@@ -13,7 +13,7 @@ githubpages not loading assets with error 404.
 fix append to remove appended stars after win multiple times. - fixed with a loop that checks if there is inner html in the victory text and removes it on game start. 
 
 if statement to check remaining time and assign stars - first if statement always true no matter what time. tried logging current time to console to see what im checking against. tried googling loops. fixed by double checking syntax and rewriting the code and testing.
-bootstrap css overriding rules - fixed by making more specific rules
+
 
 match sound not playing after match in short succession - fixed by shortening the audio file and removing silence at the end
 
@@ -21,6 +21,18 @@ mute button - i couldnt get the event listener on the mute button to both change
 mute button works fine but after rester it runs both functions on conditional statement. - fixed by moving my click function into the right constructor and writing a custom function that remembers if music was muted or not. 
 
 css issue in ios - mention this and document it well as to how u tested and why
+
+testing - 
+am I responsivenes
+devtools
+chrome//:inspect
+iphone xs
+windows 10 2560 x 1440
+windows 10 1920 x 1080 
+macOS 1920 x 1080
+android phones
+getting friends to play and find bugs
+friends found that audio from flips, matches and victory was a bit loud, lowered in the audio controller
 
 
 
@@ -36,3 +48,23 @@ flappy bird - https://mana-fun.com/preview-flappy-bird.htm
 memory background - https://wallpaperaccess.com/reptile
 arcade favicon - https://www.wayfair.com/furniture/pdx/arcade-1up-upright-arcade-game-ljhy1035.html
 viper card - https://www.ndtv.com/offbeat/world-snake-day-2020-a-look-at-5-really-strange-snakes-2263726
+snake background: https://wallpapercave.com/wp/wp4578398.jpg
+
+
+notes from rahul
+
+document scoring in readme
+ - how it works 
+add feature: difficulty 
+see if u can otherwise leave it 
+
+xcode
+emulator debug website ios
+
+display name add modal to start game
+add a welcome modal when page loads
+
+
+
+
+

@@ -19,95 +19,80 @@ p {
 
 body {
     margin: 0;
-    padding: 20px;
-    background: url("../img/snake-background.jpg") no-repeat center center fixed;
+    padding: 0px;
+    background: url("../img/snake-background2.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
-.audio-button {
-   width: 300px;
-   height: auto;
-   background-color: rgba(0, 0, 0, .4);
-   color: #41cb2c;
-   text-align: center;
-   border-radius: 12px;
-   padding: 10px;
+
+
+/*--------- Control buttons ---------*/
+
+.control-container{
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, .8);
+    color: #28b213;
+    text-align: center;
+    padding: 10px;
+    margin-left: 0px;
+    margin-top: 0px;
 }
 
-.audio-button i {
-    
+.music-icon i {
     font-size: 50px;
-
 }
 
-.audio-button i:hover {
+.music-icon i:hover {
     transform: scale(1.3);
     cursor: pointer;
+    color: #BD8025;
 }
 
-.back-to-home {
-    height: 50px;
-    width: 200px;
-    background-color: beige;
-    border: 2px solid black;
-    border-radius: 5%;
-    font-family: "Ranchers", sans-serif;
-    text-align: center;
-    margin: 10px 0px 10px 0px;
-    background-color: #41cb2c;
-    box-shadow: 2px 2px black;
-    text-decoration: none;
-
+.music-icon {
+    margin: 0px 30px 0px 0px;
 }
 
-.back-to-home p {
-    margin-top: 10px;
-    padding: 0;
-    text-shadow: 1px 1px black;
-    color: black;
+.restart-icon {
+    margin: 0px 0px 0px 30px;
+}
+.restart-icon i {
+    font-size: 40px;
+    padding-top: 5px;
 }
 
-
-.hover {
-    transform: scale(1.1);
+.restart-icon i:hover {
+    color: #BD8025;
+    transform: scale(1.3);
 }
 
-.start-game-memory {
-    height: 400px;
-    max-width: 400px;
-    background-color: chocolate;
-    font-family: "Bungee", sans-serif;
-    text-align: center;
-    padding-top: 180px;
-
-}
-
-/*--------- Mute button ---------*/ 
-
-.mute-button {
-    color: #fafafa;
-    font-size: 4em;
-    float: right;
-    top: 100px;
-    right: 100px;
-
-}
 /* --------- Memory Game ------------- */
 
 /* --------- heading -------------------*/
 .page-title {
-    color: #28b213;
+    color: #BD8025;
     font-size: 6em;
     text-align: center;
     text-shadow: 2px 2px black;
 }
+
 .game-info {
     font-size: 4em;
     color: #28b213;
     text-shadow: 2px 2px black;
+}
+
+.game-info h2 {
+    font-size: 1em;
+    color: #28b213;
+    text-shadow: 2px 2px black;   
+}
+
+.game-info h2 span {
+    color: #34a223;
 }
 
 /* --------- Cards -------------------*/
@@ -116,15 +101,18 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
 .card {
     position: relative;
     height: 175px;
     width: 125px;
 }
+
 div.card {
     background-color: transparent;
     border: none;
 }
+
 .game-container {
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -133,9 +121,11 @@ div.card {
     justify-content: center;
     perspective: 500px;
 }
+
 .card:hover {
     cursor: pointer;
 }
+
 .card-face {
     position: absolute;
     width: 125px;
@@ -149,90 +139,131 @@ div.card {
     border: 1px solid orange;
     transition: transform 500ms ease-in-out;
 }
+
 @keyframes overlay-grow {
     from {
         background-color: rgba(0, 0, 0, 0);
         font-size: 0;
     }
+
     to {
         background-color: rgba(0, 0, 0, .8);
         font-size: 10em;
     }
 }
+
 .visible .card-back {
     transform: rotateY(-180deg);
     width: 125px;
     height: 175px;
 }
+
 .visible .card-front {
     transform: rotateY(0);
     width: 125px;
     height: 175px;
 }
+
 .card-back {
     background-color: black;
-    border-color: orange;   
+    border-color: orange;
 }
+
 .card-front {
     transform: rotateY(180deg);
-    overflow: hidden; 
+    overflow: hidden;
 }
+
 .card-front img {
-    overflow: hidden;  
+    overflow: hidden;
 }
+
 /* ---------------- Overlays ---------------*/
 .overlay-text {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 20%;
+    left: 5%;
+    right: 5%;
+    bottom: 20%;
     justify-content: center;
     align-items: center;
     z-index: 100;
-    color: #41cb2c;
+    color: #BD8025;
     font-family: "Ranchers", sans-serif;
     cursor: pointer;
     text-shadow: 2px 2px black;
     text-align: center;
+    padding: 20px;
+    border-radius: 12px;
 }
 
 .overlay-text h1 {
     font-size: 1em;
 }
+
 .overlay-text-small {
     text-align: center;
     font-size: .2em;
     font-family: "Monda", sans-serif;
-    color: #34a223;   
+    color: #34a223;
 }
+
 .overlay-text.visible {
     display: flex;
     flex-direction: column;
     animation: overlay-grow 500ms forwards;
 }
+
 .overlay-text-small i {
     color: yellow;
     font-size: 3em;
 }
+
 /*-------  media query -------*/
 @media (max-width: 900px) {
     .game-container {
         grid-template-columns: repeat(2, auto);
     }
+
     .game-info-container {
         flex-direction: column;
         align-items: center;
     }
+
     /*--- Overlays ---*/
-    .overlay-text h1{
+    .overlay-text h1 {
         font-size: .2em;
     }
+
     .overlay-text-small {
         font-size: .1em;
     }
 }
 
+/*-------  media query -------*/
 
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: auto;
+    padding-top: 5px;
+    
+}
 
+footer i {
+    color: #28b213;
+    font-size: 35px;
+    letter-spacing: 30px;
+    padding: 10px;
+    margin-top: 0;
+    align-items: center;
+}
+
+footer i:hover {
+    color: #BD8025;
+    transform: scale(1.1);
+}

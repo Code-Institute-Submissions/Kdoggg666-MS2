@@ -13,26 +13,33 @@
 </head>
 
 <body>
+
+
     <!-- Background Music Controll-->
-    <div class="audio-button">
-        <h4>Background Music</h4>
-        <i id="mute-button" class="fas fa-volume-mute"></i>
+    <div class="control-container d-flex justify-content-center">
+        <div class="music-icon">
+            <h4>Music</h4>
+            <i id="mute-button" class="fas fa-volume-mute"></i>
+        </div>
+        <div class="restart-icon">
+            <h4>Restart</h4>
+            <i id="restart-button" class="fas fa-redo-alt"></i>
+        </div>
     </div>
     <!--Title-->
     <h1 class="page-title">
         Snake Hunt
-
     </h1>
     <!--Start overlay-->
     <div class="overlay-text visible">
         <h1>Welcome to Snake Hunt!</h1>
-        <span class="overlay-text-small">Click on a card to reveal a snake, try to find the matching snake. You have
-            100 seconds to find all the matches. Good Luck!<br> Click to start!</span>
+        <span class="overlay-text-small">Click on a card to reveal a snake, try to find the matching one. You have
+            100 seconds to find all the matches. Good Luck!<br>Click to start!</span>
     </div>
     <!--game over overlay-->
     <div id="game-over-text" class="overlay-text">
         <h1>GAME OVER!</h1>
-        <span class="overlay-text-small">Click to try again!</span>
+        <span class="overlay-text-small">Click to start over!</span>
     </div>
     <!--Victory overlay-->
     <div id="victory-text" class="overlay-text">
@@ -44,13 +51,13 @@
         <div class="game-info-container">
             <!--Game information-->
             <div class="game-info">
-                Time <span id="time-remaining">100</span>
+                <h2>Time: <span id="time-remaining">100</span></h2>
             </div>
             <div class="game-info">
-                Flips <span id="flips">0</span>
+                <h2>Flips: <span id="flips">0</span></h2>
             </div>
         </div>
-        <!--Cards-->
+        <!--Game cards-->
         <div class="card">
             <div class="card-back card-face">
                 <img src="assets/img/card-back.jpg" alt="snake">
@@ -180,6 +187,16 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div class="links">
+            <a href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="http://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="http://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+
+        </div>
+    </footer>
+
     <!--Javascript-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
