@@ -1,8 +1,12 @@
+/*--------- Google fonts ---------*/
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monda&display=swap');
 
+/*--------- Body ---------*/
 * {
     box-sizing: border-box;
+    user-select: none;
+    -moz-user-select: none;
 }
 
 h1,
@@ -99,17 +103,22 @@ body {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
+    user-select: none;
+    -moz-user-select: none;
 }
 
 .card {
     position: relative;
     height: 175px;
     width: 125px;
+
 }
 
 div.card {
     background-color: transparent;
     border: none;
+    user-select: none;
+    -moz-user-select: none;
 }
 
 .game-container {
@@ -133,12 +142,17 @@ div.card {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    -moz-overflow: hidden;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     border-radius: 12px;
     border: 1px solid orange;
     transition: transform 500ms ease-in-out;
     -webkit-transition: transform 500ms ease-in-out;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 @keyframes overlay-grow {
@@ -179,7 +193,10 @@ div.card {
 }
 
 .card-front img {
-    overflow: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /* ---------------- Overlays ---------------*/
@@ -226,7 +243,27 @@ div.card {
 }
 
 /*-------  media query -------*/
-@media (max-width: 900px) {
+@media only screen and (min-width: 401px) and (max-width: 900px) {
+    .game-container {
+        grid-template-columns: repeat(4, auto);
+    }
+
+    .game-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .overlay-text h1 {
+        font-size: .2em;
+    }
+
+    .overlay-text-small {
+        font-size: .1em;
+    }
+}
+
+
+@media (max-width: 400px) {
     .game-container {
         grid-template-columns: repeat(2, auto);
     }
@@ -249,13 +286,14 @@ div.card {
 /*-------  Footer -------*/
 footer {
     text-align: center;
-    position: relative;
+    position: fixed;
     bottom: 0px;
     background-color: rgba(0, 0, 0, .8);
     width: 100%;
     height: auto;
     padding-top: 5px;
     margin-top: 20px;
+
 }
 
 footer i {

@@ -20,7 +20,9 @@ match sound not playing after match in short succession - fixed by shortening th
 mute button - i couldnt get the event listener on the mute button to both change the FA icon AND pay/pause the background music - fixed by making the icon toggle function call the music toggle function after changing the FA class.
 mute button works fine but after rester it runs both functions on conditional statement. - fixed by moving my click function into the right constructor and writing a custom function that remembers if music was muted or not. 
 
-css issue in ios - mention this and document it well as to how u tested and why
+css issue in ios - needed to add -webkit- prefix
+
+accidentally highlighting cards - fixed by using user-select: none; in css. 
 
 testing - 
 am I responsivenes

@@ -84,12 +84,7 @@ class MixOrMatch {
             this.audioController.startMusic();
         };
     }
-    // my code to remove the classes of the play button and return to default
-    resetPlayButton() {
-        this.mute.classname = "";
-        this.mute.classList.add("fas", "fa-volume-mute");
-        console.log(this.mute.classname);
-    }
+
     // function written by me to change the FA icon between stop/play and call the toggleMute function
     muteButtonIcon() {
         if (this.audioController.isPlay === true) {
@@ -191,11 +186,11 @@ class MixOrMatch {
         let totalFlips = this.ticker.innerText;
         let totalTime = this.timer.innerText;
         document.getElementById("winner").insertAdjacentHTML('beforeend', `You finished with ${totalTime} seconds remaining and used ${totalFlips} card flips!`);
-        if (totalTime > 65) {
+        if (totalTime > 80) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
-        } else if (totalTime > 40) {
+        } else if (totalTime > 60) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
-        } else if (totalTime > 20) {
+        } else if (totalTime > 40) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
         } else {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br><br>Click to start over!");
