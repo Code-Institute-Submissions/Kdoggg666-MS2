@@ -1,7 +1,7 @@
 
 add to memory game - 
 credit sounds to me in presonus studio one.
-validate CSS, html and JS(via jShint)
+validate CSS, html and JS(via jShint) - all validate however js shows ES6 warnings, check this!
 
 
 
@@ -65,6 +65,6 @@ display name add modal to start game
 add a welcome modal when page loads
 
 
-
+say how to get a better score in results on victory
 
 
