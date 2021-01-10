@@ -24,7 +24,7 @@ p {
 body {
     margin: 0;
     padding: 0px;
-    background: url("../img/snake-background2.jpg") no-repeat center center fixed;
+    background: url("https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284915/images/albums/MS2/background/snake-background-2.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
