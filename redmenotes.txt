@@ -1,0 +1,66 @@
+
+add to memory game - 
+credit sounds to me in presonus studio one.
+validate CSS, html and JS(via jShint) - all validate however js shows ES6 warnings, check this!
+
+
+
+bugs - 
+*background images for divs showing in python server preview but not in github live page or gitpod preview - fixed by changing relative path.
+responsiveness of overlays - added media queery
+githubpages not loading assets with error 404. 
+
+fix append to remove appended stars after win multiple times. - fixed with a loop that checks if there is inner html in the victory text and removes it on game start. 
+
+if statement to check remaining time and assign stars - first if statement always true no matter what time. tried logging current time to console to see what im checking against. tried googling loops. fixed by double checking syntax and rewriting the code and testing.
+
+
+match sound not playing after match in short succession - fixed by shortening the audio file and removing silence at the end
+
+mute button - i couldnt get the event listener on the mute button to both change the FA icon AND pay/pause the background music - fixed by making the icon toggle function call the music toggle function after changing the FA class.
+mute button works fine but after rester it runs both functions on conditional statement. - fixed by moving my click function into the right constructor and writing a custom function that remembers if music was muted or not. 
+
+css issue in ios - needed to add -webkit- prefix
+
+accidentally highlighting cards - fixed by using user-select: none; in css. 
+
+testing - 
+am I responsivenes
+devtools
+mozilla firefox and mozilla devtools. 
+chrome//:inspect
+iphone xs
+windows 10 2560 x 1440
+windows 10 1920 x 1080 
+macOS 1920 x 1080
+android phones
+getting friends to play and find bugs
+friends found that audio from flips, matches and victory was a bit loud, lowered in the audio controller
+
+
+
+add all card scr
+img src - 
+card background - https://www.amazon.com/Journal-Green-dragon-scales-notebook/dp/1534828729#ace-g6002737843
+viper card - https://www.ndtv.com/offbeat/world-snake-day-2020-a-look-at-5-really-strange-snakes-2263726
+snake background: https://wallpapercave.com/wp/wp4578398.jpg
+favicon - https://www.favicon.cc/?action=icon&file_id=105978
+
+
+notes from rahul
+
+document scoring in readme
+ - how it works 
+add feature: difficulty 
+see if u can otherwise leave it 
+
+xcode
+emulator debug website ios
+
+display name add modal to start game
+add a welcome modal when page loads
+
+
+say how to get a better score in results on victory
+
+
