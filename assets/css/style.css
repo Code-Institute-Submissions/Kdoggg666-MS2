@@ -267,12 +267,13 @@ div.card {
     .overlay-text-small {
         font-size: .1em;
     }
+
 }
 
 
 @media (max-width: 400px) {
     .game-container {
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(3, auto);
     }
 
     .game-info-container {
@@ -287,6 +288,36 @@ div.card {
 
     .overlay-text-small {
         font-size: .1em;
+    }
+
+    .card {
+        height: 125px;
+        width: 75px;
+    }
+
+    .visible .card-front {
+        width: 75px;
+        height: 125px;
+    }
+
+    .visible .card-back {
+        width: 75px;
+        height: 125px;
+    }
+
+    .card-back {
+        width: 75px;
+        height: 125px;
+    }
+
+    .card img {
+        width: 75px;
+        height: 125px;
+    }
+
+    .card-front {
+        width: 75px;
+        height: 125px;
     }
 }
 

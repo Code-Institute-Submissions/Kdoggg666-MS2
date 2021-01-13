@@ -39,28 +39,20 @@ friends found that audio from flips, matches and victory was a bit loud, lowered
 
 
 
-add all card scr
-img src - 
-card background - https://www.amazon.com/Journal-Green-dragon-scales-notebook/dp/1534828729#ace-g6002737843
-viper card - https://www.ndtv.com/offbeat/world-snake-day-2020-a-look-at-5-really-strange-snakes-2263726
-snake background: https://wallpapercave.com/wp/wp4578398.jpg
-favicon - https://www.favicon.cc/?action=icon&file_id=105978
-
 
 notes from rahul
 
-document scoring in readme
- - how it works 
 add feature: difficulty 
 see if u can otherwise leave it 
 
-xcode
-emulator debug website ios
 
 display name add modal to start game
 add a welcome modal when page loads
 
 
-say how to get a better score in results on victory
 
 
+TO DO README
+Deployment
+conclusion
+User stories
