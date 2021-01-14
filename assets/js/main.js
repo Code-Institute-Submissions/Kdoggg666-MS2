@@ -209,12 +209,35 @@ class MixOrMatch {
         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
     }
 }
-// Load memory-game.js ONLY when the HTML has finished loading 
+
+    
+// Load welcome modal ONLY when the HTML has finished loading 
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", ready());
+    document.addEventListener("DOMContentLoaded", $("#welcome-modal").modal('show'));
 } else {
-    ready();
+    $("#welcome-modal").modal('show')
 }
+// My function for when user selects easy mode
+    $("#easy-button").click(function() {
+        $(".start-overlay").addClass("visible");
+        $("#welcome-modal").modal('hide');
+        ready();
+});
+
+    $("#medium-button").click(function() {
+        $(".start-overlay").addClass("visible");
+        $("#welcome-modal").modal('hide');
+        mediumMode();
+        ready();
+});
+
+function mediumMode() {
+    $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-6.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-6.jpg" alt="snake">'+'</div>');
+};
+
 // Shows the new game overlay when js file has loaded
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));

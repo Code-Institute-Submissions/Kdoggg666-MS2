@@ -113,6 +113,7 @@ body {
     margin-top: 0;
 }
 
+
 .card {
     position: relative;
     height: 175px;
@@ -253,6 +254,7 @@ div.card {
 @media only screen and (min-width: 401px) and (max-width: 900px) {
     .game-container {
         grid-template-columns: repeat(4, auto);
+
     }
 
     .game-info-container {
@@ -290,6 +292,7 @@ div.card {
         font-size: .1em;
     }
 
+    /*--- Cards ---*/
     .card {
         height: 125px;
         width: 75px;

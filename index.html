@@ -25,12 +25,32 @@
             <i id="restart-button" class="fas fa-redo-alt"></i>
         </div>
     </div>
+    <!-- Welcome modal -->
+    <div id="welcome-modal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">welcome</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" id="easy-button" class="btn btn-secondary" >Easy</button>
+        <button type="button" id="medium-button" class="btn btn-secondary" >Medium</button>
+        <button type="button" id="hard-button" class="btn btn-secondary" >Hard</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!--Title-->
     <h1 class="page-title">
         Snake Hunt
     </h1>
     <!--Start overlay-->
-    <div class="overlay-text visible">
+    <div class="overlay-text start-overlay">
         <h1>Welcome to Snake Hunt!</h1>
         <span class="overlay-text-small">Click on a card to reveal a snake, try to find the matching one. You have
             100 seconds to find all the matches. Good Luck!<br>Click to start!</span>
@@ -57,6 +77,7 @@
             </div>
         </div>
         <!--Game cards-->
+        
         <div class="card">
             <div class="card-back card-face">
                 <img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg"
@@ -189,40 +210,8 @@
                     alt="snake">
             </div>
         </div>
-        <!--  
-              <div class="card d-none d-md-block">
-            <div class="card-back card-face">
-                <img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">
-            </div>
-            <div class="card-front card-face">
-                <img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-6.jpg" alt="snake">
-            </div>
-        </div>
-        <div class="card d-none d-md-block">
-            <div class="card-back card-face">
-                <img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">
-            </div>
-            <div class="card-front card-face">
-                <img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-6.jpg" alt="snake">
-            </div>
-        </div>
-        <div class="card d-none d-md-block">
-            <div class="card-back card-face">
-                <img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">
-            </div>
-            <div class="card-front card-face">
-                <img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284791/images/albums/MS2/Cards/card-8.jpg" alt="snake">
-            </div>
-        </div>
-        <div class="card d-none d-md-block">
-            <div class="card-back card-face">
-                <img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">
-            </div>
-            <div class="card-front card-face">
-                <img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284791/images/albums/MS2/Cards/card-8.jpg" alt="snake">
-            </div>
-        </div>
-        -->
+        
+        
     </div>
     <br><br><br>
     <footer>
