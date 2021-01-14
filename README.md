@@ -81,6 +81,13 @@ All music and sound effects created by me using Presonus Studio One 5
   
 **Emerald Tree Boa** - https://commons.wikimedia.org/wiki/File:Emerald_Tree_Boas_NC.jpg  
 
+**Cape Coral Cobra** - https://www.sciencemag.org/news/2020/01/tiny-organs-grown-snake-glands-produce-real-venom
+
+**Norma Ball Python** - https://senecaparkzoo.org/animal-pages/ball-python/
+
+**Grey Ball Python** - https://www.reptilesmagazine.com/trademark-exotics-and-piebald-ball-pythons/
+
+**Green Annaconda** - https://www.wildrepublic.com/product/anaconda/
 
 ## Testing
  To test this site I used multiple devices such as an iphone, ipad, macbook, windows 10 laptop, my desktop PC and a Huawei media pad. I also frequently asked my friends and family to play this game on their devices and provide me feedback. My friends dicovered the bugs with the score, the mute button and the media volume. My sister helped by testing on her Macbook and iphone as well as providing feedback on the responsiveness and layout. I used Google Chrome Devtools to debug code by logging certain stages and loops that I was testing to the console so I could see what was happenning when as well as see any issues that get thrown up by the console. I also discovered that by visiting chrome://inspect to log the console of a website on mobile devices which proved very helpful. 

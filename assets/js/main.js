@@ -223,7 +223,7 @@ if (document.readyState === "loading") {
         $("#welcome-modal").modal('hide');
         ready();
 });
-
+// My function for when user selects medium mode
     $("#medium-button").click(function() {
         $(".start-overlay").addClass("visible");
         $("#welcome-modal").modal('hide');
@@ -231,11 +231,55 @@ if (document.readyState === "loading") {
         ready();
 });
 
+// My function for when user selects hard mode
+    $("#hard-button").click(function() {
+        $(".start-overlay").addClass("visible");
+        $("#welcome-modal").modal('hide');
+        hardMode();
+        ready();
+});
+
 function mediumMode() {
+
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-8.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-8.jpg" alt="snake">'+'</div>');
     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610638304/images/albums/MS2/Cards/card-10.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610638304/images/albums/MS2/Cards/card-10.jpg" alt="snake">'+'</div>');
+        $(".game-container").append('<div class="card"><div class="card-back card-face">'+
     '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-6.jpg" alt="snake">'+'</div>');
      $(".game-container").append('<div class="card"><div class="card-back card-face">'+
     '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-6.jpg" alt="snake">'+'</div>');
+};
+
+function hardMode() {
+    $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-8.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-8.jpg" alt="snake">'+'</div>');
+    $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610638304/images/albums/MS2/Cards/card-10.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610638304/images/albums/MS2/Cards/card-10.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-7.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-7.jpg" alt="snake">'+'</div>');
+    $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610638073/images/albums/MS2/Cards/card-9.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610638073/images/albums/MS2/Cards/card-9.jpg" alt="snake">'+'</div>');
+    $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610639115/images/albums/MS2/Cards/card-11.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610639115/images/albums/MS2/Cards/card-11.jpg" alt="snake">'+'</div>');
+        $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610639289/images/albums/MS2/Cards/card-12.jpg" alt="snake">'+'</div>');
+     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610639289/images/albums/MS2/Cards/card-12.jpg" alt="snake">'+'</div>');
 };
 
 // Shows the new game overlay when js file has loaded
