@@ -12,7 +12,8 @@
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
     font-family: "Ranchers", sans-serif;
     letter-spacing: 5px;
 }
@@ -75,6 +76,80 @@ body {
 }
 
 /* --------- Memory Game ------------- */
+
+/* --------- Welcome Modal -------------------*/
+.modal {
+    position: absolute;
+    top: 20vh;
+}
+
+.modal-header {
+
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+    border: none;
+}
+
+.modal h4 {
+    color: #BD8025;
+    font-size: 4em;
+
+}
+
+.modal h5 {
+    font-size: 3em;
+    color: #BD8025;
+}
+
+.modal p {
+    font-size: 2em;
+}
+
+.modal-body {
+    color: #28b213;
+    background-color: black;
+    text-align: center;
+    border: none;
+}
+
+
+.modal .modal-footer {
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+    border: none;
+}
+
+.modal button {
+    border-radius: 12px;
+    border: 1px solid orange;
+    color: #fafafa;
+    width: 200px;
+    height: 100px;
+    font-family: "Ranchers", sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    /*--Text outline trick from https://stackoverflow.com/questions/4919076/outline-effect-to-text*/
+    text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+        #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.easy {
+    background-color: #28b213;
+}
+
+.medium {
+    background-color: #BD8025;
+}
+
+.hard {
+    background-color: #d70040;
+}
+
+
+
 /* --------- heading -------------------*/
 .page-title {
     color: #BD8025;

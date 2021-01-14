@@ -219,13 +219,13 @@ if (document.readyState === "loading") {
 }
 // My function for when user selects easy mode
     $("#easy-button").click(function() {
-        $(".start-overlay").addClass("visible");
+        $("#easy-overlay").addClass("visible");
         $("#welcome-modal").modal('hide');
         ready();
 });
 // My function for when user selects medium mode
     $("#medium-button").click(function() {
-        $(".start-overlay").addClass("visible");
+        $("#medium-overlay").addClass("visible");
         $("#welcome-modal").modal('hide');
         mediumMode();
         ready();
@@ -233,12 +233,12 @@ if (document.readyState === "loading") {
 
 // My function for when user selects hard mode
     $("#hard-button").click(function() {
-        $(".start-overlay").addClass("visible");
+        $("#hard-overlay").addClass("visible");
         $("#welcome-modal").modal('hide');
         hardMode();
         ready();
 });
-
+// My function to add more cards when medium mode is selected
 function mediumMode() {
 
      $(".game-container").append('<div class="card"><div class="card-back card-face">'+
@@ -250,11 +250,11 @@ function mediumMode() {
      $(".game-container").append('<div class="card"><div class="card-back card-face">'+
     '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610638304/images/albums/MS2/Cards/card-10.jpg" alt="snake">'+'</div>');
         $(".game-container").append('<div class="card"><div class="card-back card-face">'+
-    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-6.jpg" alt="snake">'+'</div>');
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610638073/images/albums/MS2/Cards/card-9.jpg" alt="snake">'+'</div>');
      $(".game-container").append('<div class="card"><div class="card-back card-face">'+
-    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-6.jpg" alt="snake">'+'</div>');
+    '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610638073/images/albums/MS2/Cards/card-9.jpg" alt="snake">'+'</div>');
 };
-
+// My function to add the max amount of cards when hard mode is selected
 function hardMode() {
     $(".game-container").append('<div class="card"><div class="card-back card-face">'+
     '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610284792/images/albums/MS2/Cards/card-8.jpg" alt="snake">'+'</div>');
@@ -282,11 +282,32 @@ function hardMode() {
     '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">'+'</div>'+'<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610639289/images/albums/MS2/Cards/card-12.jpg" alt="snake">'+'</div>');
 };
 
+//function firstGame() {
+  //  let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+    //let cards = Array.from(document.getElementsByClassName('card'));
+    //let game = new MixOrMatch(120, cards);
+    // add event listener for each overlay
+    //overlays.forEach(overlay => {
+      //  overlay.addEventListener('click', () => {
+        //    overlay.classList.remove('visible');
+          //  let audioController = new AudioController();
+       // });
+    //});
+    // Adds event listener for each card
+    //cards.forEach(card => {
+      //  card.addEventListener('click', () => {
+        //    game.flipCard(card);
+        //});
+    //});
+//    game.startGame();
+//}
+
+
 // Shows the new game overlay when js file has loaded
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new MixOrMatch(100, cards);
+    let game = new MixOrMatch(120, cards);
     // add event listener for each overlay
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
