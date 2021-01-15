@@ -33,7 +33,7 @@
         <h4 class="modal-title">Welcome to Snake Hunt</h4>
        </div>
       <div class="modal-body">
-        <p>Click on a card to reveal a snake, try to find the matching one. You have
+        <p>Click on a card to reveal a snake, try to find the matching card. You have
             120 seconds to find all the matches.<br> Good Luck!<br><br></p><h5>Select a difficulty level:</h5>
       </div>
       <div class="modal-footer">
@@ -46,9 +46,11 @@
 </div>
 
     <!--Title-->
+    
     <h1 class="page-title">
-        Snake Hunt
+        <span class="page-title-box">Snake Hunt</span>
     </h1>
+    
     <!--Difficulty overlays -->
     <div class="overlay-text" id="easy-overlay">
         <h1>Easy Mode Selected!</h1>
@@ -64,8 +66,8 @@
     </div>
     <!--game over overlay-->
     <div id="game-over-text" class="overlay-text">
-        <h1>GAME OVER!</h1>
-        <span class="overlay-text-small">Click to start over!</span>
+        <h1><i class="fas fa-sad-cry"></i>GAME OVER!<i class="fas fa-sad-cry"></i></h1>
+        <span class="overlay-text-small">Click to try again!</span>
     </div>
     <!--Victory overlay-->
     <div id="victory-text" class="overlay-text">
@@ -77,10 +79,13 @@
         <div class="game-info-container">
             <!--Game information-->
             <div class="game-info">
-                <h2>Time: <span id="time-remaining">120</span></h2>
+                <h2>Time: <span class="score-text" id="time-remaining">120</span></h2>
             </div>
             <div class="game-info">
-                <h2>Flips: <span id="flips">0</span></h2>
+                <h2>Flips: <span class="score-text" id="flips">000</span></h2>
+            </div>
+             <div class="game-info">
+                <h2>Score: <span class="score-text" id="score">000</span></h2>
             </div>
         </div>
         <!--Game cards-->

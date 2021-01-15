@@ -129,7 +129,7 @@ All music and sound effects created by me using Presonus Studio One 5
 
 ## Features I would like to impliment
 
-I would like to implament a better scoring system as well as a difficulty selector which adds more cards when you select a difficulty level. However I am struggling with javasript and feel I wouldnt be able to implament this in time for my deadline. I would also like to implament an input that stores the players name and displays it on the page somewhere.
+I would like to implament a better scoring system. I would also like to implament an input that stores the players name and displays it on the page somewhere.
 
 ## Wireframe
 ![Snake Hunt Memory Game](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610553297/images/albums/MS2/memory-game.png "Snake Hunt")

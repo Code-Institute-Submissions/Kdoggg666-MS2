@@ -1,6 +1,7 @@
 /*--------- Google fonts ---------*/
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text&display=swap');
 
 /*--------- Body ---------*/
 * {
@@ -156,15 +157,31 @@ body {
     font-size: 5em;
     text-align: center;
     text-shadow: 2px 2px black;
-    margin-bottom: 0px;
+    margin-top: 30px;
+    margin-bottom: 10px;
     padding-bottom: 0;
+       
+}
+
+.page-title-box {
+    border: 5px solid orange;
+    background-color: rgba(0, 0, 0, .8); 
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 5px 5px black;
 }
 
 .game-info {
     font-size: 4em;
     color: #28b213;
     text-shadow: 2px 2px black;
-    margin-top: 10px;
+    margin-top: 20px;
+    border: 2px solid orange;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, .8);
+    text-align: center;
+    padding: 5px;
 }
 
 .game-info h2 {
@@ -173,8 +190,12 @@ body {
     text-shadow: 2px 2px black;
 }
 
-.game-info h2 span {
-    color: #34a223;
+.score-text {
+    color: #fafafa;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    
+    
+
 }
 
 /* --------- Cards -------------------*/
