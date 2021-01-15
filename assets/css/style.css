@@ -160,12 +160,12 @@ body {
     margin-top: 30px;
     margin-bottom: 10px;
     padding-bottom: 0;
-       
+
 }
 
 .page-title-box {
     border: 5px solid orange;
-    background-color: rgba(0, 0, 0, .8); 
+    background-color: rgba(0, 0, 0, .8);
     margin-top: 10px;
     padding: 10px;
     border-radius: 12px;
@@ -182,6 +182,7 @@ body {
     background-color: rgba(0, 0, 0, .8);
     text-align: center;
     padding: 5px;
+    box-shadow: 5px 5px black;
 }
 
 .game-info h2 {
@@ -193,9 +194,6 @@ body {
 .score-text {
     color: #fafafa;
     font-family: "Big Shoulders Stencil Text", sans-serif;
-    
-    
-
 }
 
 /* --------- Cards -------------------*/
@@ -214,7 +212,6 @@ body {
     position: relative;
     height: 175px;
     width: 125px;
-
 }
 
 div.card {
@@ -308,8 +305,8 @@ div.card {
     display: none;
     position: fixed;
     top: 20%;
-    left: 5%;
-    right: 5%;
+    left: 20%;
+    right: 20%;
     bottom: 20%;
     justify-content: center;
     align-items: center;
@@ -322,7 +319,9 @@ div.card {
     padding: 20px;
     border-radius: 12px;
 }
-
+.overlay-text i {
+    color: #fafafa;
+}
 .overlay-text h1 {
     font-size: 75px;
 }

@@ -75,6 +75,7 @@ class MixOrMatch {
         this.hideCards();
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
+        
     }
     musicCheck() {
         if (this.mute.classList.contains("fa-play")) {
@@ -164,6 +165,7 @@ class MixOrMatch {
                 this.gameOver();
         }, 1000);
     }
+
     // --------- game over function ---------
     gameOver() {
         clearInterval(this.countDown);

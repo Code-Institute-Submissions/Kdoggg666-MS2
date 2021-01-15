@@ -27,41 +27,45 @@
     </div>
     <!-- Welcome modal -->
     <div id="welcome-modal" class="modal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Welcome to Snake Hunt</h4>
-       </div>
-      <div class="modal-body">
-        <p>Click on a card to reveal a snake, try to find the matching card. You have
-            120 seconds to find all the matches.<br> Good Luck!<br><br></p><h5>Select a difficulty level:</h5>
-      </div>
-      <div class="modal-footer">
-          <button type="button" id="easy-button" class="btn btn-secondary easy" >Easy</button>
-        <button type="button" id="medium-button" class="btn btn-secondary medium" >Medium</button>
-        <button type="button" id="hard-button" class="btn btn-secondary hard" >Hard</button>
-      </div>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Welcome to Snake Hunt</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Click on a card to reveal a snake, try to find the matching card. You have
+                        120 seconds to find all the matches.<br> Good Luck!<br><br></p>
+                    <h5>Select a difficulty level:</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="easy-button" class="btn btn-secondary easy">EASY</button>
+                    <button type="button" id="medium-button" class="btn btn-secondary medium">MEDIUM</button>
+                    <button type="button" id="hard-button" class="btn btn-secondary hard">JEDI</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
     <!--Title-->
-    
+
     <h1 class="page-title">
         <span class="page-title-box">Snake Hunt</span>
     </h1>
-    
+
     <!--Difficulty overlays -->
     <div class="overlay-text" id="easy-overlay">
         <h1>Easy Mode Selected!</h1>
+        <i class="fas fa-baby"></i>
         <span class="overlay-text-small"><br>Click to start!</span>
     </div>
     <div class="overlay-text" id="medium-overlay">
         <h1>Medium Mode Selected!</h1>
+        <i class="fas fa-glasses"></i>
         <span class="overlay-text-small"><br>Click to start!</span>
     </div>
     <div class="overlay-text" id="hard-overlay">
-        <h1>Hard Mode Selected!</h1>
+        <h1>Jedi Mode Selected!</h1>
+        <i class="fab fa-jedi-order"></i>
         <span class="overlay-text-small"><br>Click to start!</span>
     </div>
     <!--game over overlay-->
@@ -83,9 +87,6 @@
             </div>
             <div class="game-info">
                 <h2>Flips: <span class="score-text" id="flips">000</span></h2>
-            </div>
-             <div class="game-info">
-                <h2>Score: <span class="score-text" id="score">000</span></h2>
             </div>
         </div>
         <!--Game cards-->
@@ -221,9 +222,9 @@
                     alt="snake">
             </div>
         </div>
-       
-        
-        
+
+
+
     </div>
     <br><br><br>
     <footer>
