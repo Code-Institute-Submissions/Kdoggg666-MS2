@@ -21,13 +21,13 @@
             <i id="mute-button" class="fas fa-volume-mute"></i>
         </div>
         <div class="restart-icon">
-            <h4>Change Difficulty</h4>
+            <h4>Restart</h4>
             <i id="restart-button" class="fas fa-redo-alt"></i>
         </div>
     </div>
     <!-- Welcome modal -->
     <div id="welcome-modal" class="modal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Welcome to Snake Hunt</h4>
@@ -80,7 +80,7 @@
     </div>
     <!--Game Area-->
     <div class="scoreboard">
-        <h5>Scoreboard</h5>
+        <h5>Last 5 Rounds</h5>
         <ul class="score-text">
             <li><span id="score-one"></span></li>
             <li><span id="score-two"></span></li>
@@ -96,6 +96,9 @@
             <!--Game information-->
             <div class="game-info">
                 <h2>Time: <span class="score-text" id="time-remaining">120</span></h2>
+            </div>
+            <div class="game-info">
+                <h2>Best: <span class="score-text" id="high-score">0</span></h2>
             </div>
             <div class="game-info">
                 <h2>Flips: <span class="score-text" id="flips">000</span></h2>

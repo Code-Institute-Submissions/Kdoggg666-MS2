@@ -66,7 +66,6 @@ class MixOrMatch {
     startGame() {
         this.roundCheck();
         roundNumber++;
-        console.log(roundNumber)
         this.removeScore();
         this.cardToCheck = null;
         this.totalClicks = 0;
@@ -214,6 +213,8 @@ class MixOrMatch {
         } else {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
         };
+        //Update High score 
+        
         // my code to report the last 5 scores to the scoreboard. 
         if (roundNumber === 1) {
             $("#score-one").html(totalScore);
@@ -225,7 +226,19 @@ class MixOrMatch {
             $("#score-four").html(totalScore);
         } else if (roundNumber === 5) {
             $("#score-five").html(totalScore);
-        }
+        };
+
+        let highScore = $("#high-score").html;
+        if ($("#high-score").html() >= totalScore) {
+            console.log(totalScore)
+            return;
+        } else {
+            $("#high-score").html(totalScore);
+            console.log("Higher")
+            console.log(totalScore)
+        };
+
+        
     }
 
 
