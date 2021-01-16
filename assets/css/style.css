@@ -75,6 +75,43 @@ body {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
 }
+/* --------- Scoreboarde ------------- */
+
+.scoreboard {
+    text-align: center;
+    width: 300px;
+    height: 375px;
+    border: 5px solid orange;
+    background-color: rgba(0, 0, 0, .9);
+    border-radius: 12px;
+    position: absolute;
+    left: 20px;
+    top: 245px;
+    padding: 5px;
+}
+
+.scoreboard h5 {
+    font-size: 40px;
+    color: #BD8025;
+    text-decoration: underline;
+}
+
+.scoreboard ol {
+    color: #28b213;
+    font-size: 40px;
+}
+
+.score-text {
+    color: #fafafa;
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+}
+
+.score-text li {
+    font-size: 40px;
+}
+
+
+
 
 /* --------- Memory Game ------------- */
 
@@ -191,10 +228,7 @@ body {
     text-shadow: 2px 2px black;
 }
 
-.score-text {
-    color: #fafafa;
-    font-family: "Big Shoulders Stencil Text", sans-serif;
-}
+
 
 /* --------- Cards -------------------*/
 .game-info-container {
@@ -263,7 +297,7 @@ div.card {
     }
 
     to {
-        background-color: rgba(0, 0, 0, .8);
+        background-color: rgba(0, 0, 0, .9);
         font-size: 10em;
     }
 }

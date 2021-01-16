@@ -1,4 +1,6 @@
 // ------ Memory game - JS totorial by PortEXE on  https://www.youtube.com/watch?v=3uuQ3g92oPQ ------
+// My variable to check which round it is
+let roundNumber = 0;
 // ------- Audio controller --------
 class AudioController {
     constructor() {
@@ -58,8 +60,13 @@ class MixOrMatch {
         // my restart game click handler
         this.restart.addEventListener('click', () => window.location.reload());
     }
+
+
     // Start the game function
     startGame() {
+        this.roundCheck();
+        roundNumber++;
+        console.log(roundNumber)
         this.removeScore();
         this.cardToCheck = null;
         this.totalClicks = 0;
@@ -75,8 +82,18 @@ class MixOrMatch {
         this.hideCards();
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
-        
+
     }
+    // My function to check which round it is and reset if the round is more than 5
+    roundCheck() {
+        if (roundNumber >= 5) {
+            roundNumber = 0;
+        } else {
+            return;
+        }
+    }
+
+    // my function to check if music is playing
     musicCheck() {
         if (this.mute.classList.contains("fa-play")) {
             return;
@@ -165,7 +182,6 @@ class MixOrMatch {
                 this.gameOver();
         }, 1000);
     }
-
     // --------- game over function ---------
     gameOver() {
         clearInterval(this.countDown);
@@ -196,9 +212,24 @@ class MixOrMatch {
         } else if (totalScore >= 4000) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
         } else {
-            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>"+ "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
+            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
+        };
+        // my code to report the last 5 scores to the scoreboard. 
+        if (roundNumber === 1) {
+            $("#score-one").html(totalScore);
+        } else if (roundNumber === 2) {
+            $("#score-two").html(totalScore);
+        } else if (roundNumber === 3) {
+            $("#score-three").html(totalScore);
+        } else if (roundNumber === 4) {
+            $("#score-four").html(totalScore);
+        } else if (roundNumber === 5) {
+            $("#score-five").html(totalScore);
         }
     }
+
+
+
     // Fisher-Yates shuffle method - wikipedia
     shuffleCards() {
         for (let i = this.cardsArray.length - 1; i > 0; i--) {
@@ -282,6 +313,8 @@ function hardMode() {
     $(".game-container").append('<div class="card"><div class="card-back card-face">' +
         '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">' + '</div>' + '<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610639289/images/albums/MS2/Cards/card-12.jpg" alt="snake">' + '</div>');
 };
+
+
 // Shows the new game overlay when js file has loaded
 function ready() {
     let gameLevel;
@@ -303,3 +336,4 @@ function ready() {
         });
     });
 };
+
