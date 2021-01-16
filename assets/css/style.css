@@ -407,8 +407,11 @@ div.card {
 
 }
 
-
 @media (max-width: 400px) {
+    .page-title {
+        font-size: 3em;
+    }
+
     .game-container {
         grid-template-columns: repeat(3, auto);
     }

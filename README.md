@@ -61,11 +61,12 @@ I have chosen to keep the footer simple with only Font Awesome icons with animat
 All music and sound effects created by me using Presonus Studio One 5
 
 ### Photo Credits
+   
+**Background image** - https://wallpapercave.com/wp/wp4578398.jpg
+
 **Card Background** - https://www.amazon.com/Journal-Green-dragon-scales-notebook/dp/1534828729#ace-g6002737843  
   
 **Bush Viper card** - https://www.ndtv.com/offbeat/world-snake-day-2020-a-look-at-5-really-strange-snakes-2263726 
-   
-**Background image** - https://wallpapercave.com/wp/wp4578398.jpg  
   
 **Two headed snake** - https://media1.s-nbcnews.com/j/newscms/2020_43/3422181/201022-two-headed-reptile-2x1-se-235p_ee73360f2cbd8ecb69ad9696995717d8.nbcnews-fp-1200-630.jpg  
   
@@ -83,11 +84,11 @@ All music and sound effects created by me using Presonus Studio One 5
 
 **Cape Coral Cobra** - https://www.sciencemag.org/news/2020/01/tiny-organs-grown-snake-glands-produce-real-venom
 
-**Norma Ball Python** - https://senecaparkzoo.org/animal-pages/ball-python/
+**pastel Ball Python** - https://www.everythingreptiles.com/pastel-ball-python/
 
 **Grey Ball Python** - https://www.reptilesmagazine.com/trademark-exotics-and-piebald-ball-pythons/
 
-**Green Annaconda** - https://www.wildrepublic.com/product/anaconda/
+**Green Viper** - https://safety4sea.com/deadly-snake-found-on-african-ship/
 
 ## Testing
  To test this site I used multiple devices such as an iphone, ipad, macbook, windows 10 laptop, my desktop PC and a Huawei media pad. I also frequently asked my friends and family to play this game on their devices and provide me feedback. My friends dicovered the bugs with the score, the mute button and the media volume. My sister helped by testing on her Macbook and iphone as well as providing feedback on the responsiveness and layout. I used Google Chrome Devtools to debug code by logging certain stages and loops that I was testing to the console so I could see what was happenning when as well as see any issues that get thrown up by the console. I also discovered that by visiting chrome://inspect to log the console of a website on mobile devices which proved very helpful. 
