@@ -56,3 +56,12 @@ TO DO README
 Deployment
 conclusion
 User stories
+
+
+deployment 
+Nope not quite...
+
+you want to go into full details about how another user can easily clone your project locally on their set (provide the actual clone command to them using your repo name,
+... use the Markdown format for the entire clone command for them)... 
+and then if you use any APIs, how they can obtain their own API key and such
+https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository

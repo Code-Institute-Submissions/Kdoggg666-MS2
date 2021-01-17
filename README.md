@@ -8,7 +8,7 @@ See Media Credits section for media citations. All music and sound effects creat
 My name is Kenan Wright, I am currently an enthusiast beginner web developer. I am currently studying software development through Code Institute. I have a passion for music, technology, nature and reptiles. I work 40 hours a week and study 20. 
 
 ##  Snake Hunt Javascript Memory Game
-For my second project I have decided to merge a few of my passions Reptiles, music and programming. I decided to make a memory game using a snake theme and music and sound effects which I have created myself.    
+For my second project I have decided to merge a few of my passions Reptiles, music and programming. I decided to make a memory game using a snake theme paired with music and sound effects which I have created myself. I started by following a tutorial which I then customised and added custom functionality. A link to the tutorial can be found under the Code Credits section of this README.
 Live Example [Here](https://www.kenanwright.online)
 
 ## User Experience Goals
@@ -18,17 +18,28 @@ Userstory
 ## Website Sections
 
 #### Theme and style
-For the theme I have used shades of orange and green as found on some of my favourite snakes and lizards as well as match the background I have used well. I have used 2 google fonts, Ranchers and Monda which I selected for their aesthetics and readibility. 
+For the theme I have used shades of orange and green as found on some of my favourite snakes and lizards and also match the background I have used. I have used 3 google fonts, Ranchers, Big Shoulders and Monda which I selected for their aesthetics and readibility. 
 
 #### Top Bar
 Instead of a Navbar which I feel would be pointless on a single page game, I instead made a button to mute the music which remembers your choice after victory or game over. I have also added a restart button which reloads the page and starts the game all over again.
 
+#### Welcome modal
+The welcome modal opens when the page loads, explaining the rules to the user and prompting them to select a difficulty. Each difficulty will trigger its own overlay with an icon representing the difficulty and prompting the user to click to start the game.
+
 #### Memory game
-My memory game comprises of a 2x6 grid of cards, I originally had a 4x4 grid however I found that on most devices and screens this requires scrolling to view all the cards. The cards are all face down when the game starts, the user selects a card and tries to find the matching card and repeats till all the cards are matched or the timer runs out. When the user loads the page they will have a pop up overlay welcoming them as well as explaining the rules. Upon victory an overlay will pop up and show the user how many seconds and card flips they took to achieve this. The user will also be awarded a rating out of 3 stars. I have also created an overlay for a game over screen which displays when the user has run out of time. 
+My game is a card flipping game where the user must click on a card to reveal a snake, then try to find the matching card. I have 3 difficulties, easy, medium and Jedi(hard). On easy the game will deal a grid of 2x6 cards and have an 80 second time limit. Medium is a 3x6 grid and a 120 second time limit. Hard is a 4x6 grid with a 180 second time limit. if the user runs out of time the game over screen will appear and the user will be prompted to try again. If the user finds all the matches the victory screen will appear and the user will be given a score and a star rating. 
+
 #### Score
-The user attempts to get all the matches within 100 seconds. They will be rewarded with 0 to 3 stars. To acheive 3 stars the user must find all the matches with no less than 80 seconds remaining on the clock, 2 stars the user needs to find all the matches in no less than 60 seconds remaining and for 1 star they will need to find all the matches with no less than 40 seconds remaining. I have written a custom function which checks time remaining and prints your results as well as star rating to the victory overlay. 
+The user attempts to get all the matches within 100 seconds. They will be rewarded with 0 to 3 stars. I decideed on a formula for scoring which takes the ramaining time and multiplies it by a base number of 200 - the amount of used flips. I did this because the more flips a player uses the less the multiplyer would be. Stars are then awarded based on total points.
+
+#### Scoreboard
+The users best score will be shown between the time and flips sections after the first round has been completed. I used a function which checks if the current score is greater than the high score and replaces it if need be. The players last 5 attempts will be shown in the scoreboard to the left but only on devices with enough space to show this without covering the game area.
+
 #### Footer
 I have chosen to keep the footer simple with only Font Awesome icons with animations which link to the main social media sites as well as Github.
+
+#### Overlays
+The overlays will display when a difficulty has been selected, the user runs out of time or upon victory. The victory overlay will show the users score as well as show them how many stars they were awarded.
 
 
 ## Technologies Used
@@ -49,14 +60,17 @@ I have chosen to keep the footer simple with only Font Awesome icons with animat
 **Bootstrap 4 CDN** - faster bootstrap boilerplate.  
 **Cloudinary** - Hosting images to make the site load faster.  
 **Presonus Studio One 5** - Used to make the sounds as well as background music.
+**Apple Safari** - Used for testing.
+**Mozilla Firefox** - Used for testing.
+**Opera** - Used for testing.
 
 ## Code Credits
 **PortEXE** - Memory game tutorial used and customised from [PortEXE on Youtube](https://www.youtube.com/watch?v=3uuQ3g92oPQ)  
 **WebDevSimplified** - CS layout tutorial used then customised and changed [WebDevSimplified on Youtube](https://www.youtube.com/watch?v=28VfzEiJgy4)  
 **Bootstrap Documentation** - Bootstrap documentation used for reference.  
 **Mozilla Developer Network** - MDN documentation used for reference.  
-**W3 Schools** - W3 Schools used for reference.
-**Stock Overflow** - I found multiple solutions for issues I ran into on stack overflow and have credited the post in a comment above the code.
+**W3 Schools** - W3 Schools used for reference.  
+**Stack Overflow** - I found multiple solutions for issues I ran into on stack overflow and have credited the post in a comment above the code.
 
 ## Sound Credits
 All music and sound effects created by me using Presonus Studio One 5
@@ -94,12 +108,13 @@ All music and sound effects created by me using Presonus Studio One 5
 ## Testing
  To test this site I used multiple devices such as an iphone, ipad, macbook, windows 10 laptop, my desktop PC and a Huawei media pad. I also frequently asked my friends and family to play this game on their devices and provide me feedback. My friends dicovered the bugs with the score, the mute button and the media volume. My sister helped by testing on her Macbook and iphone as well as providing feedback on the responsiveness and layout. I used Google Chrome Devtools to debug code by logging certain stages and loops that I was testing to the console so I could see what was happenning when as well as see any issues that get thrown up by the console. I also discovered that by visiting chrome://inspect to log the console of a website on mobile devices which proved very helpful. 
 
-![Am I Responsive?](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610553530/images/albums/MS2/amiresponsiveMS2.png)
+![Am I Responsive?](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610884303/images/albums/MS2/amiresponsiveMS2.png)
 ![Mobile Testing](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610554623/images/albums/MS2/phonetesting.png)
 ![1440p](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556562/images/albums/MS2/1440p_hwvihl.png)
 ![1080p](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556559/images/albums/MS2/1080p.png)
 ![mobile-landscape](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556700/images/albums/MS2/mobile-landscape.jpg)
 ![Chrome://inspect](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556902/images/albums/MS2/chrome-inspect.jpg)
+![Welcome Modal](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610884140/images/albums/MS2/1440p_with_modal.png)
 ## Validation
 **CSS** - CSS validated at CSS Level 3+ SVG with only some warnings about using -moz- and -webkit- prefixes.   
 ![CSS Validation](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610555618/images/albums/MS2/validation/css-validation.png)  
@@ -131,14 +146,18 @@ All music and sound effects created by me using Presonus Studio One 5
 
 **Clicking outside the modal on start** - Clicking outside the modal would load the page without the overlays and would not start the JS. Fixed with code from https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up
 
+**Setting Game time based on difficulty** - Innitially I struggled with this, at first I tried several functions which would define the game variable and pass a number to the class, however I couldnt seem to get this to work. I instead found a simpler more effective way of doing this by using a variable that is set to a number based on user difficulty choice and passing that variable to the class.
 
 ## Features I would like to impliment
 
-I would like to implament an input that stores the players name and displays it on the page somewhere however space is very limited especially on smaller displays and I didn't have time to implament this. 
+I would like to implament an input that stores the players name and displays it on the page somewhere however space is very limited especially on smaller displays and I didn't have time to implament this. I would also like to come up with a better equasion for scoring. I would like to write a function that changes how the game is scored based on difficulty selected, however I feel I dont have time to implament and test this before the submition deadline. I would also like to find a way to make this game better for mobile as it is responsive however there just isnt enough space on small devices to show all the cards on one screen.
 
-## Wireframe
+## Wireframes
+
+As I was following a turorial I didn't really put much thought into my wireframes as after I was done with the tutorial I changed all the css and a lot of the layout through trial and error to see what I liked.
+
 ![Snake Hunt Memory Game](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610553297/images/albums/MS2/memory-game.png "Snake Hunt")
- 
+![Snake Hunt Memory Game Mobile](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610884791/images/albums/MS2/memory-game-responsive.png "Snake Hunt Mobile")
 ## Deployment
 
 ## Conclusion

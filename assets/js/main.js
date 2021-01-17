@@ -1,6 +1,7 @@
 // ------ Memory game - JS totorial by PortEXE on  https://www.youtube.com/watch?v=3uuQ3g92oPQ ------
 // My variable to check which round it is
 let roundNumber = 0;
+let gameTime;
 // ------- Audio controller --------
 class AudioController {
     constructor() {
@@ -60,7 +61,6 @@ class MixOrMatch {
         // my restart game click handler
         this.restart.addEventListener('click', () => window.location.reload());
     }
-
 
     // Start the game function
     startGame() {
@@ -201,14 +201,14 @@ class MixOrMatch {
         let totalFlips = this.ticker.innerText;
         let totalTime = this.timer.innerText;
         // My code to determine a score based on flips used and time remaining
-        let flipScore = 100 - totalFlips;
+        let flipScore = 200 - totalFlips;
         let totalScore = totalTime * flipScore;
         document.getElementById("winner").insertAdjacentHTML('beforeend', `You finished with <span class="score-text">${totalTime}</span> seconds remaining and used <span class="score-text">${totalFlips}</span> card flips! <br> Your final score is: <span class="score-text">${totalScore}</span>`);
-        if (totalScore >= 8000) {
+        if (totalScore >= 11000) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
-        } else if (totalScore >= 6000) {
+        } else if (totalScore >= 8000) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
-        } else if (totalScore >= 4000) {
+        } else if (totalScore >= 6000) {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
         } else {
             document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
@@ -227,18 +227,13 @@ class MixOrMatch {
         } else if (roundNumber === 5) {
             $("#score-five").html(totalScore);
         };
-
+        //my code to check if the current score is higher than the high score and replace it if need be
         let highScore = $("#high-score").html;
         if ($("#high-score").html() >= totalScore) {
-            console.log(totalScore)
             return;
         } else {
             $("#high-score").html(totalScore);
-            console.log("Higher")
-            console.log(totalScore)
         };
-
-        
     }
 
     // Fisher-Yates shuffle method - wikipedia
@@ -264,7 +259,7 @@ if (document.readyState === "loading") {
 $("#easy-button").click(function () {
     $("#easy-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
-    gameTime = "easy";
+    gameTime = 80;
     ready();
 
 });
@@ -273,7 +268,7 @@ $("#medium-button").click(function () {
     $("#medium-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
     mediumMode();
-    gameTime = "medium";
+    gameTime = 120;
     ready();
 });
 
@@ -282,7 +277,7 @@ $("#hard-button").click(function () {
     $("#hard-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
     hardMode();
-    gameTime = "hard";
+    gameTime = 180;
     ready();
 });
 // My function to add more cards when medium mode is selected
@@ -331,11 +326,11 @@ function hardMode() {
 
 // Shows the new game overlay when js file has loaded
 function ready() {
-    let gameLevel;
+
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    //let game = new MixOrMatch(120, cards);
-    this.gameTime();
+    // constructor that i changed to take a variable so that when you select a difficulty the game time is changed. 
+    let game = new MixOrMatch(gameTime, cards);
     // add event listener for each overlay
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
@@ -352,15 +347,4 @@ function ready() {
     });
 };
 
-function gameTime() {
-    if (gameTime === "easy") {
-        let game = new MixOrMatch(80, cards);
-        console.log(gameTime);
-    } else if (gameTime === "medium") {
-        let game = new MixOrMatch(120, cards);
-        console.log("gameTime");
-    } else if (gameTime === "hard") {
-        let game = new MixOrMatch(140, cards);
-        console.log("gameTime");
-    }
-};
+
