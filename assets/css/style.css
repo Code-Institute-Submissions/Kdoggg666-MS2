@@ -33,6 +33,13 @@ body {
     background-size: cover;
 }
 
+/*--------- Stops clicking on anything but the modal. Code from https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up ---------*/
+body.modal-open {
+    pointer-events: none;
+}
+
+
+
 /*--------- Control buttons ---------*/
 .control-container {
     width: 100%;
@@ -151,6 +158,7 @@ body {
     background-color: black;
     text-align: center;
     border: none;
+    pointer-events: auto;
 }
 
 
@@ -410,6 +418,10 @@ div.card {
 @media (max-width: 400px) {
     .page-title {
         font-size: 3em;
+    }
+
+    body.modal-open {
+        pointer-events: auto;
     }
 
     .game-container {

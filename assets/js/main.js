@@ -241,8 +241,6 @@ class MixOrMatch {
         
     }
 
-
-
     // Fisher-Yates shuffle method - wikipedia
     shuffleCards() {
         for (let i = this.cardsArray.length - 1; i > 0; i--) {
@@ -266,6 +264,7 @@ if (document.readyState === "loading") {
 $("#easy-button").click(function () {
     $("#easy-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
+    gameTime = "easy";
     ready();
 
 });
@@ -274,6 +273,7 @@ $("#medium-button").click(function () {
     $("#medium-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
     mediumMode();
+    gameTime = "medium";
     ready();
 });
 
@@ -282,6 +282,7 @@ $("#hard-button").click(function () {
     $("#hard-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
     hardMode();
+    gameTime = "hard";
     ready();
 });
 // My function to add more cards when medium mode is selected
@@ -333,7 +334,8 @@ function ready() {
     let gameLevel;
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new MixOrMatch(120, cards);
+    //let game = new MixOrMatch(120, cards);
+    this.gameTime();
     // add event listener for each overlay
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
@@ -350,3 +352,15 @@ function ready() {
     });
 };
 
+function gameTime() {
+    if (gameTime === "easy") {
+        let game = new MixOrMatch(80, cards);
+        console.log(gameTime);
+    } else if (gameTime === "medium") {
+        let game = new MixOrMatch(120, cards);
+        console.log("gameTime");
+    } else if (gameTime === "hard") {
+        let game = new MixOrMatch(140, cards);
+        console.log("gameTime");
+    }
+};

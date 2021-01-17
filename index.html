@@ -12,8 +12,8 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
-<body>
+<!-- Stops the user from being able to drag cards code from https://stackoverflow.com/questions/704564/disable-drag-and-drop-on-html-elements#:~:text=You%20can%20disable%20dragging%20simply,draggable%3D%22false%22%20attribute.-->
+<body ondragstart="return false;" ondrop="return false;">
     <!-- Background Music Controll-->
     <div class="control-container d-flex justify-content-center">
         <div class="music-icon">

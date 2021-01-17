@@ -41,7 +41,7 @@ I have chosen to keep the footer simple with only Font Awesome icons with animat
 **CSS** - CSS was used to style the website and define fonts and layout.  
 **Bootstrap** - Bootsrap was used to align items..  
 **JavaScript** - JavaScript was used to provide logic and funtionality to the game as well as play audio.  
-**Jquery** - Jquery was included with the bootstrap CDN however my code is in vanilla JS.   
+**Jquery** - Jquery was used to write certain functions however I tried to use vanilla JS for the most part.   
 **Font Awesome** - Social Media icons from Font Awesome.  
 **Google Chrome** - The website was built and tested in google Chrome.  
 **Auto close tag** - self explanitory.  
@@ -55,7 +55,8 @@ I have chosen to keep the footer simple with only Font Awesome icons with animat
 **WebDevSimplified** - CS layout tutorial used then customised and changed [WebDevSimplified on Youtube](https://www.youtube.com/watch?v=28VfzEiJgy4)  
 **Bootstrap Documentation** - Bootstrap documentation used for reference.  
 **Mozilla Developer Network** - MDN documentation used for reference.  
-**W3 Schools** - W3 Schools used for reference
+**W3 Schools** - W3 Schools used for reference.
+**Stock Overflow** - I found multiple solutions for issues I ran into on stack overflow and have credited the post in a comment above the code.
 
 ## Sound Credits
 All music and sound effects created by me using Presonus Studio One 5
@@ -124,13 +125,16 @@ All music and sound effects created by me using Presonus Studio One 5
   
 **Cards always showing face up on IOS and Safari** - On all browsers on an IOS device including chrome as well as on Safari on Mac devices the cards would deal face up. This was solved by adding -webkit- prefix to all animations and transform effects.  
   
-**Cards getting highlighted** Its easy to accidentally drag the mouse and highlight cards - This was fixed by using the css user-select: none on the body.  
-  
+**Cards getting highlighted** - Its easy to accidentally drag the mouse and highlight cards - This was fixed by using the css user-select: none on the body.  
+
+**Users were able to drag cards** - Fixed with code from https://stackoverflow.com/questions/704564/disable-drag-and-drop-on-html-elements#:~:text=You%20can%20disable%20dragging%20simply,draggable%3D%22false%22%20attribute.
+
+**Clicking outside the modal on start** - Clicking outside the modal would load the page without the overlays and would not start the JS. Fixed with code from https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up
 
 
 ## Features I would like to impliment
 
-I would like to implament a better scoring system. I would also like to implament an input that stores the players name and displays it on the page somewhere.
+I would like to implament an input that stores the players name and displays it on the page somewhere however space is very limited especially on smaller displays and I didn't have time to implament this. 
 
 ## Wireframe
 ![Snake Hunt Memory Game](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610553297/images/albums/MS2/memory-game.png "Snake Hunt")
