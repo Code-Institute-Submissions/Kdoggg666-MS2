@@ -41,6 +41,8 @@ I have chosen to keep the footer simple with only Font Awesome icons with animat
 #### Overlays
 The overlays will display when a difficulty has been selected, the user runs out of time or upon victory. The victory overlay will show the users score as well as show them how many stars they were awarded.
 
+#### Local Storage
+I have used local storage to store the users highscore which will display the users highest score even after the user has refreshed the browser. For this I have used the local storage API.  
 
 ## Technologies Used
 **One Hosting** - I have registered my own domain and am using it to deploy my live site. [One.com Hosting](http://www.one.com)  
@@ -106,7 +108,7 @@ All music and sound effects created by me using Presonus Studio One 5
 **Green Viper** - https://safety4sea.com/deadly-snake-found-on-african-ship/
 
 ## Testing
- To test this site I used multiple devices such as an iphone, ipad, macbook, windows 10 laptop, my desktop PC and a Huawei media pad. I also frequently asked my friends and family to play this game on their devices and provide me feedback. My friends dicovered the bugs with the score, the mute button and the media volume. My sister helped by testing on her Macbook and iphone as well as providing feedback on the responsiveness and layout. I used Google Chrome Devtools to debug code by logging certain stages and loops that I was testing to the console so I could see what was happenning when as well as see any issues that get thrown up by the console. I also discovered that by visiting chrome://inspect to log the console of a website on mobile devices which proved very helpful. 
+ To test this site I used multiple devices such as an iphone, ipad, macbook, windows 10 laptop, my desktop PC and a Huawei media pad. I also frequently asked my friends and family to play this game on their devices and provide me feedback. My friends dicovered the bugs with the score, the mute button and the media volume. My sister helped by testing on her Macbook and iphone as well as providing feedback on the responsiveness and layout. I used Google Chrome Devtools to debug code by logging certain stages and loops that I was testing to the console so I could see what was happenning when as well as see any issues that get thrown up by the console. I also discovered that by visiting chrome://inspect you can log the console of a website on mobile devices which proved very helpful. 
 
 ![Am I Responsive?](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610884303/images/albums/MS2/amiresponsiveMS2.png)
 ![Mobile Testing](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610554623/images/albums/MS2/phonetesting.png)

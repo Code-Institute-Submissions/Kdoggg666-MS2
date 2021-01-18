@@ -2,6 +2,16 @@
 // My variable to check which round it is
 let roundNumber = 0;
 let gameTime;
+
+updateHighScore();
+function updateHighScore() {
+    let savedHighScore = localStorage.getItem('High Score');
+if (savedHighScore === null) {
+    return;
+} else {
+$("#high-score").html(savedHighScore);
+};
+}
 // ------- Audio controller --------
 class AudioController {
     constructor() {
@@ -60,6 +70,9 @@ class MixOrMatch {
         this.restart = document.getElementById("restart-button");
         // my restart game click handler
         this.restart.addEventListener('click', () => window.location.reload());
+
+        
+        
     }
 
     // Start the game function
@@ -100,7 +113,7 @@ class MixOrMatch {
             this.audioController.startMusic();
         };
     }
-    // function written by me to change the FA icon between stop/play and call the toggleMute function
+    // function written by me to change the FA icon between stop/play and call the play/stop function
     muteButtonIcon() {
         if (this.audioController.isPlay === true) {
             this.mute.classList.remove("fa-volume-mute");
@@ -215,17 +228,22 @@ class MixOrMatch {
         };
         //Update High score 
         
-        // my code to report the last 5 scores to the scoreboard. 
+        // my code to report the last 5 scores to the scoreboard and to local storage. 
         if (roundNumber === 1) {
             $("#score-one").html(totalScore);
+            localStorage.setItem('score-one', totalScore);
         } else if (roundNumber === 2) {
             $("#score-two").html(totalScore);
+            localStorage.setItem('score-two', totalScore);
         } else if (roundNumber === 3) {
             $("#score-three").html(totalScore);
+            localStorage.setItem('score-three', totalScore);
         } else if (roundNumber === 4) {
             $("#score-four").html(totalScore);
+            localStorage.setItem('score-four', totalScore);
         } else if (roundNumber === 5) {
             $("#score-five").html(totalScore);
+            localStorage.setItem('score-five', totalScore);
         };
         //my code to check if the current score is higher than the high score and replace it if need be
         let highScore = $("#high-score").html;
@@ -233,7 +251,10 @@ class MixOrMatch {
             return;
         } else {
             $("#high-score").html(totalScore);
+            //saves the high score to local storage
+            localStorage.setItem('High Score', totalScore);
         };
+        //
     }
 
     // Fisher-Yates shuffle method - wikipedia
@@ -326,7 +347,6 @@ function hardMode() {
 
 // Shows the new game overlay when js file has loaded
 function ready() {
-
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
     // constructor that i changed to take a variable so that when you select a difficulty the game time is changed. 
