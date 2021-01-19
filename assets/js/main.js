@@ -105,7 +105,13 @@ class MixOrMatch {
         // my variable to restart game
         this.restart = document.getElementById("restart-button");
         // my restart game click handler
-        this.restart.addEventListener('click', () => window.location.reload());
+        this.restart.addEventListener('click', () => this.removeRound());
+    }
+    //My function to remove 1 from the current round number when user resets, this stops there from being a blank score if user resets and changes difficulty or doesnt complete a game
+    removeRound() {
+        roundNumber--;
+        localStorage.setItem('round-number', roundNumber);
+        location.reload();
     }
     // Start the game function
     startGame() {
@@ -344,7 +350,7 @@ if (document.readyState === "loading") {
 $("#easy-button").click(function () {
     $("#easy-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
-    gameTime = 80;
+    gameTime = 60;
     difficulty = "Easy"
     ready();
 
