@@ -150,6 +150,8 @@ All music and sound effects created by me using Presonus Studio One 5
 
 **Setting Game time based on difficulty** - Innitially I struggled with this, at first I tried several functions which would define the game variable and pass a number to the class, however I couldnt seem to get this to work. I instead found a simpler more effective way of doing this by using a variable that is set to a number based on user difficulty choice and passing that variable to the class.
 
+**Round number resetting on page reload** - fixed by storing round number to local storage instead of on the main.js file. This will remember the round after reload and not reset round number as hitting restart reloads the page, thus starting from round 1 again and will overwrite the first score on the scoreboard. 
+
 ## Features I would like to impliment
 
 I would like to implament an input that stores the players name and displays it on the page somewhere however space is very limited especially on smaller displays and I didn't have time to implament this. I would also like to come up with a better equasion for scoring. I would like to write a function that changes how the game is scored based on difficulty selected, however I feel I dont have time to implament and test this before the submition deadline. I would also like to find a way to make this game better for mobile as it is responsive however there just isnt enough space on small devices to show all the cards on one screen.

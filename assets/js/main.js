@@ -1,17 +1,53 @@
 // ------ Memory game - JS totorial by PortEXE on  https://www.youtube.com/watch?v=3uuQ3g92oPQ ------
+// Getting the date variable
+let gameDate = new Date();
+let gameDay = gameDate.getDate();
+let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let gameMonth = months[gameDate.getMonth()];
+let shortDate = gameDay + " " + gameMonth;
 // My variable to check which round it is
-let roundNumber = 0;
 let gameTime;
-
+let difficulty;
+let savedRoundNumber = localStorage.getItem('round-number');
+let roundNumber;
+getRoundNumber();
+//My function to check if the user has a previous round number stored in local storage and apply that if need be
+function getRoundNumber() {
+    if (savedRoundNumber !== NaN) {
+        roundNumber = (savedRoundNumber);
+        console.log(savedRoundNumber);
+    } else {
+        roundNumber = 0;
+    }
+};
 updateHighScore();
+// My function that checks if the local storage has data from a previous session and updates required areas.
 function updateHighScore() {
     let savedHighScore = localStorage.getItem('High Score');
-if (savedHighScore === null) {
-    return;
-} else {
-$("#high-score").html(savedHighScore);
+    if (savedHighScore !== null) {
+        $("#high-score").html(savedHighScore);
+    }
+    let savedScoreOne = localStorage.getItem('score-one');
+    if (savedScoreOne !== null) {
+        $("#score-one").html(savedScoreOne);
+    }
+    let savedScoreTwo = localStorage.getItem('score-two');
+    if (savedScoreTwo !== null) {
+        $("#score-two").html(savedScoreTwo);
+    }
+    let savedScoreThree = localStorage.getItem('score-three');
+    if (savedScoreThree !== null) {
+        $("#score-three").html(savedScoreThree);
+    }
+    let savedScoreFour = localStorage.getItem('score-four');
+    if (savedScoreFour !== null) {
+        $("#score-four").html(savedScoreFour);
+    }
+    let savedScoreFive = localStorage.getItem('score-five');
+    if (savedScoreFive !== null) {
+        $("#score-five").html(savedScoreFive);
+    }
 };
-}
 // ------- Audio controller --------
 class AudioController {
     constructor() {
@@ -70,15 +106,12 @@ class MixOrMatch {
         this.restart = document.getElementById("restart-button");
         // my restart game click handler
         this.restart.addEventListener('click', () => window.location.reload());
-
-        
-        
     }
-
     // Start the game function
     startGame() {
         this.roundCheck();
         roundNumber++;
+        localStorage.setItem('round-number', roundNumber);
         this.removeScore();
         this.cardToCheck = null;
         this.totalClicks = 0;
@@ -94,7 +127,6 @@ class MixOrMatch {
         this.hideCards();
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
-
     }
     // My function to check which round it is and reset if the round is more than 5
     roundCheck() {
@@ -104,7 +136,6 @@ class MixOrMatch {
             return;
         }
     }
-
     // my function to check if music is playing
     musicCheck() {
         if (this.mute.classList.contains("fa-play")) {
@@ -213,37 +244,35 @@ class MixOrMatch {
     reportScore() {
         let totalFlips = this.ticker.innerText;
         let totalTime = this.timer.innerText;
-        // My code to determine a score based on flips used and time remaining
+        // My code to determine a score based on flips used and time remaining        
         let flipScore = 200 - totalFlips;
         let totalScore = totalTime * flipScore;
-        document.getElementById("winner").insertAdjacentHTML('beforeend', `You finished with <span class="score-text">${totalTime}</span> seconds remaining and used <span class="score-text">${totalFlips}</span> card flips! <br> Your final score is: <span class="score-text">${totalScore}</span>`);
-        if (totalScore >= 11000) {
-            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
-        } else if (totalScore >= 8000) {
-            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
-        } else if (totalScore >= 6000) {
-            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
-        } else {
-            document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
+        //insert time and flips onto victory overlay
+        document.getElementById("winner").insertAdjacentHTML('beforeend', `You finished on <span class="score-text">${difficulty}</span> difficulty with <span class="score-text">${totalTime}</span> seconds remaining and used <span class="score-text">${totalFlips}</span> card flips! <br> Your final score is: <span class="score-text">${totalScore}</span>`);
+        //Checks the difficulty and calculates score
+        if (difficulty === "Easy") {
+            scoreEasy();
+        } else if (difficulty === "Medium") {
+            scoreMedium();
+        } else if (difficulty === "Jedi") {
+            scoreJedi();
         };
-        //Update High score 
-        
-        // my code to report the last 5 scores to the scoreboard and to local storage. 
+        // my code to report the last 5 scores, the difficulty selected and the date to the scoreboard and to local storage. 
         if (roundNumber === 1) {
-            $("#score-one").html(totalScore);
-            localStorage.setItem('score-one', totalScore);
+            $("#score-one").html(totalScore + " - " + difficulty + " - " + shortDate);
+            localStorage.setItem('score-one', totalScore + " - " + difficulty + " - " + shortDate);
         } else if (roundNumber === 2) {
-            $("#score-two").html(totalScore);
-            localStorage.setItem('score-two', totalScore);
+            $("#score-two").html(totalScore + " - " + difficulty + " - " + shortDate);
+            localStorage.setItem('score-two', totalScore + " - " + difficulty + " - " + shortDate);
         } else if (roundNumber === 3) {
-            $("#score-three").html(totalScore);
-            localStorage.setItem('score-three', totalScore);
+            $("#score-three").html(totalScore + " - " + difficulty + " - " + shortDate);
+            localStorage.setItem('score-three', totalScore + " - " + difficulty + " - " + shortDate);
         } else if (roundNumber === 4) {
-            $("#score-four").html(totalScore);
-            localStorage.setItem('score-four', totalScore);
+            $("#score-four").html(totalScore + " - " + difficulty + " - " + shortDate);
+            localStorage.setItem('score-four', totalScore + " - " + difficulty + " - " + shortDate);
         } else if (roundNumber === 5) {
-            $("#score-five").html(totalScore);
-            localStorage.setItem('score-five', totalScore);
+            $("#score-five").html(totalScore + " - " + difficulty + " - " + shortDate);
+            localStorage.setItem('score-five', totalScore + " - " + difficulty + " - " + shortDate);
         };
         //my code to check if the current score is higher than the high score and replace it if need be
         let highScore = $("#high-score").html;
@@ -254,9 +283,43 @@ class MixOrMatch {
             //saves the high score to local storage
             localStorage.setItem('High Score', totalScore);
         };
-        //
-    }
+        //My functions to assign score based on difficulty
+        function scoreEasy() {
+            if (totalScore >= 10000) {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
+            } else if (totalScore >= 8000) {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
+            } else if (totalScore >= 6000) {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
+            } else {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
+            };
+        };
 
+        function scoreMedium() {
+            if (totalScore >= 16000) {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
+            } else if (totalScore >= 12000) {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
+            } else if (totalScore >= 8000) {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
+            } else {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
+            };
+        };
+
+        function scoreJedi() {
+            if (totalScore >= 20000) {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
+            } else if (totalScore >= 16000) {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Two Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
+            } else if (totalScore >= 12000) {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
+            } else {
+                document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
+            };
+        };
+    };
     // Fisher-Yates shuffle method - wikipedia
     shuffleCards() {
         for (let i = this.cardsArray.length - 1; i > 0; i--) {
@@ -276,11 +339,13 @@ if (document.readyState === "loading") {
 } else {
     $("#welcome-modal").modal('show')
 }
+
 // My function for when user selects easy mode
 $("#easy-button").click(function () {
     $("#easy-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
     gameTime = 80;
+    difficulty = "Easy"
     ready();
 
 });
@@ -289,6 +354,7 @@ $("#medium-button").click(function () {
     $("#medium-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
     mediumMode();
+    difficulty = "Medium"
     gameTime = 120;
     ready();
 });
@@ -299,6 +365,7 @@ $("#hard-button").click(function () {
     $("#welcome-modal").modal('hide');
     hardMode();
     gameTime = 180;
+    difficulty = "Jedi"
     ready();
 });
 // My function to add more cards when medium mode is selected
@@ -343,8 +410,6 @@ function hardMode() {
     $(".game-container").append('<div class="card"><div class="card-back card-face">' +
         '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">' + '</div>' + '<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610806867/images/albums/MS2/Cards/card-12.jpg" alt="snake">' + '</div>');
 };
-
-
 // Shows the new game overlay when js file has loaded
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
@@ -366,5 +431,3 @@ function ready() {
         });
     });
 };
-
-
