@@ -8,18 +8,40 @@ let shortDate = gameDay + " " + gameMonth;
 // My variable to check which round it is
 let gameTime;
 let difficulty;
+let isPlay;
 let savedRoundNumber = localStorage.getItem('round-number');
 let roundNumber;
+let isPlaySaved = localStorage.getItem("is-play");
+console.log(isPlaySaved)
+isPlay = isPlaySaved;
+console.log(isPlay);
 getRoundNumber();
+checkMusic();
+
+function checkMusic() {
+    if (isPlay === "false") {
+        $("#mute-button").removeClass("fa-volume-mute");
+        $("#mute-button").addClass("fa-play");
+        console.log("is play is false");
+    } else if (isPlay === null){
+        
+        console.log("is play is null");
+    } else {
+        $("#mute-button").removeClass("fa-play");
+        $("#mute-button").addClass("fa-volume-mute");
+        console.log("is play is else");
+    }
+}
+
+
 //My function to check if the user has a previous round number stored in local storage and apply that if need be
 function getRoundNumber() {
     if (savedRoundNumber !== NaN) {
         roundNumber = (savedRoundNumber);
-        console.log(savedRoundNumber);
     } else {
         roundNumber = 0;
     }
-};
+}
 updateHighScore();
 // My function that checks if the local storage has data from a previous session and updates required areas.
 function updateHighScore() {
@@ -47,7 +69,7 @@ function updateHighScore() {
     if (savedScoreFive !== null) {
         $("#score-five").html(savedScoreFive);
     }
-};
+}
 // ------- Audio controller --------
 class AudioController {
     constructor() {
@@ -63,16 +85,18 @@ class AudioController {
         this.gameOverSound.volume = 0.6;
         this.matchSound.volume = 0.5;
         //my variable to check weather audio is playing
-        this.isPlay;
+        
     }
     startMusic() {
         this.bgMusic.play();
-        this.isPlay = true;
+        isPlay = true;
+        localStorage.setItem("is-play", true);
     }
     stopMusic() {
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
-        this.isPlay = false;
+        isPlay = false;
+        localStorage.setItem("is-play", false);
     }
     flip() {
         this.flipSound.play();
@@ -105,13 +129,7 @@ class MixOrMatch {
         // my variable to restart game
         this.restart = document.getElementById("restart-button");
         // my restart game click handler
-        this.restart.addEventListener('click', () => this.removeRound());
-    }
-    //My function to remove 1 from the current round number when user resets, this stops there from being a blank score if user resets and changes difficulty or doesnt complete a game
-    removeRound() {
-        roundNumber--;
-        localStorage.setItem('round-number', roundNumber);
-        location.reload();
+        this.restart.addEventListener('click', () => window.location.reload());
     }
     // Start the game function
     startGame() {
@@ -144,7 +162,7 @@ class MixOrMatch {
     }
     // my function to check if music is playing
     musicCheck() {
-        if (this.mute.classList.contains("fa-play")) {
+        if ($("#mute-button").hasClass("fa-play")) {
             return;
         } else {
             this.audioController.startMusic();
@@ -152,14 +170,16 @@ class MixOrMatch {
     }
     // function written by me to change the FA icon between stop/play and call the play/stop function
     muteButtonIcon() {
-        if (this.audioController.isPlay === true) {
+        if (isPlay === true) {
             this.mute.classList.remove("fa-volume-mute");
             this.mute.classList.add("fa-play");
             this.audioController.stopMusic();
+            
         } else {
             this.mute.classList.remove("fa-play");
             this.mute.classList.add("fa-volume-mute");
             this.audioController.startMusic();
+            
         }
     }
     // written by me to removes score from last round on new game
@@ -262,7 +282,7 @@ class MixOrMatch {
             scoreMedium();
         } else if (difficulty === "Jedi") {
             scoreJedi();
-        };
+        }
         // my code to report the last 5 scores, the difficulty selected and the date to the scoreboard and to local storage. 
         if (roundNumber === 1) {
             $("#score-one").html(totalScore + " - " + difficulty + " - " + shortDate);
@@ -288,7 +308,7 @@ class MixOrMatch {
             $("#high-score").html(totalScore);
             //saves the high score to local storage
             localStorage.setItem('High Score', totalScore);
-        };
+        }
         //My functions to assign score based on difficulty
         function scoreEasy() {
             if (totalScore >= 10000) {
@@ -299,8 +319,8 @@ class MixOrMatch {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
             } else {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
-            };
-        };
+            }
+        }
 
         function scoreMedium() {
             if (totalScore >= 16000) {
@@ -311,8 +331,8 @@ class MixOrMatch {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
             } else {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
-            };
-        };
+            }
+        }
 
         function scoreJedi() {
             if (totalScore >= 20000) {
@@ -323,9 +343,9 @@ class MixOrMatch {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get one Star! <br>" + "<br><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
             } else {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
-            };
-        };
-    };
+            }
+        }
+    }
     // Fisher-Yates shuffle method - wikipedia
     shuffleCards() {
         for (let i = this.cardsArray.length - 1; i > 0; i--) {
@@ -343,15 +363,15 @@ class MixOrMatch {
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", $("#welcome-modal").modal('show'));
 } else {
-    $("#welcome-modal").modal('show')
+    $("#welcome-modal").modal('show');
 }
 
 // My function for when user selects easy mode
 $("#easy-button").click(function () {
     $("#easy-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
-    gameTime = 60;
-    difficulty = "Easy"
+    gameTime = 80;
+    difficulty = "Easy";
     ready();
 
 });
@@ -360,7 +380,7 @@ $("#medium-button").click(function () {
     $("#medium-overlay").addClass("visible");
     $("#welcome-modal").modal('hide');
     mediumMode();
-    difficulty = "Medium"
+    difficulty = "Medium";
     gameTime = 120;
     ready();
 });
@@ -371,7 +391,7 @@ $("#hard-button").click(function () {
     $("#welcome-modal").modal('hide');
     hardMode();
     gameTime = 180;
-    difficulty = "Jedi"
+    difficulty = "Jedi";
     ready();
 });
 // My function to add more cards when medium mode is selected
@@ -388,7 +408,7 @@ function mediumMode() {
         '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">' + '</div>' + '<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610805427/images/albums/MS2/Cards/card-9.jpg" alt="snake">' + '</div>');
     $(".game-container").append('<div class="card"><div class="card-back card-face">' +
         '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">' + '</div>' + '<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610805427/images/albums/MS2/Cards/card-9.jpg" alt="snake">' + '</div>');
-};
+}
 // My function to add the max amount of cards when hard mode is selected
 function hardMode() {
     $(".game-container").append('<div class="card"><div class="card-back card-face">' +
@@ -415,7 +435,7 @@ function hardMode() {
         '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">' + '</div>' + '<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610806867/images/albums/MS2/Cards/card-12.jpg" alt="snake">' + '</div>');
     $(".game-container").append('<div class="card"><div class="card-back card-face">' +
         '<img src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610285621/images/albums/MS2/Cards/card-back.jpg" alt="snake">' + '</div>' + '<div class="card-front card-face"><img class="card-value" src="https://res.cloudinary.com/dyxe4g62g/image/upload/v1610806867/images/albums/MS2/Cards/card-12.jpg" alt="snake">' + '</div>');
-};
+}
 // Shows the new game overlay when js file has loaded
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
@@ -436,4 +456,4 @@ function ready() {
             game.flipCard(card);
         });
     });
-};
+}

@@ -29,17 +29,21 @@ The welcome modal opens when the page loads, explaining the rules to the user an
 #### Memory game
 My game is a card flipping game where the user must click on a card to reveal a snake, then try to find the matching card. I have 3 difficulties, easy, medium and Jedi(hard). On easy the game will deal a grid of 2x6 cards and have an 80 second time limit. Medium is a 3x6 grid and a 120 second time limit. Hard is a 4x6 grid with a 180 second time limit. if the user runs out of time the game over screen will appear and the user will be prompted to try again. If the user finds all the matches the victory screen will appear and the user will be given a score and a star rating. 
 
-#### Score
-The user attempts to get all the matches within 100 seconds. They will be rewarded with 0 to 3 stars. I decideed on a formula for scoring which takes the ramaining time and multiplies it by a base number of 200 - the amount of used flips. I did this because the more flips a player uses the less the multiplyer would be. Stars are then awarded based on total points.
 
-#### Scoreboard
-The users best score will be shown between the time and flips sections after the first round has been completed. I used a function which checks if the current score is greater than the high score and replaces it if need be. The players last 5 attempts will be shown in the scoreboard to the left but only on devices with enough space to show this without covering the game area.
 
 #### Footer
 I have chosen to keep the footer simple with only Font Awesome icons with animations which link to the main social media sites as well as Github.
 
 #### Overlays
 The overlays will display when a difficulty has been selected, the user runs out of time or upon victory. The victory overlay will show the users score as well as show them how many stars they were awarded.
+
+## functionality
+
+#### Score
+The user attempts to get all the matches within 100 seconds. They will be rewarded with 0 to 3 stars. I decideed on a formula for scoring which takes the ramaining time and multiplies it by a base number of 200 - the amount of used flips. I did this because the more flips a player uses the less the multiplyer would be. Stars are then awarded based on total points.
+
+#### Scoreboard
+The users best score will be shown between the time and flips sections after the first round has been completed. I used a function which checks if the current score is greater than the high score and replaces it if need be. The players last 5 attempts will be shown in the scoreboard to the left but only on devices with enough space to show this without covering the game area.
 
 #### Local Storage
 I have used local storage to store the users highscore which will display the users highest score even after the user has refreshed the browser. For this I have used the local storage API.  
@@ -151,6 +155,8 @@ All music and sound effects created by me using Presonus Studio One 5
 **Setting Game time based on difficulty** - Innitially I struggled with this, at first I tried several functions which would define the game variable and pass a number to the class, however I couldnt seem to get this to work. I instead found a simpler more effective way of doing this by using a variable that is set to a number based on user difficulty choice and passing that variable to the class.
 
 **Round number resetting on page reload** - fixed by storing round number to local storage instead of on the main.js file. This will remember the round after reload and not reset round number as hitting restart reloads the page, thus starting from round 1 again and will overwrite the first score on the scoreboard. 
+
+**Music choice not being saved** - After extensive googling and tutor support I realised that the local storage was treating true and false as a string and not a boolean. Fixed by changing my if statement to check if variable is "false" instead of false.
 
 ## Features I would like to impliment
 

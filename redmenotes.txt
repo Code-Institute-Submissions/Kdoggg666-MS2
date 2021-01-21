@@ -15,4 +15,8 @@ and then if you use any APIs, how they can obtain their own API key and such
 https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository
 
 
-FIX ROUND NUMBER PROBLEM!!!!!!
+append to scoreboard game over and have sample text populated on first load. 
+
+take lots of pics of functionality and add to README
+
+move audio controls and restart button so that more of the game is in focus, shift heading and score stuff up. 
