@@ -14,12 +14,16 @@
 </head>
 <!-- Stops the user from being able to drag cards code from https://stackoverflow.com/questions/704564/disable-drag-and-drop-on-html-elements#:~:text=You%20can%20disable%20dragging%20simply,draggable%3D%22false%22%20attribute.-->
 <body ondragstart="return false;" ondrop="return false;">
-    <!-- Background Music Controll-->
-    <div class="control-container d-flex justify-content-center">
+    
+    <!--Title and controls-->
+    <div class="container-fluid control-container d-flex justify-content-center">
         <div class="music-icon">
             <h4>Music</h4>
             <i id="mute-button" class="fa fa-volume-mute"></i>
         </div>
+        <h1 class="page-title">
+        <span class="page-title-box">Snake Hunt</span>
+    </h1>
         <div class="restart-icon">
             <h4>Restart</h4>
             <i id="restart-button" class="fas fa-redo-alt"></i>
@@ -44,12 +48,6 @@
             </div>
         </div>
     </div>
-
-    <!--Title-->
-
-    <h1 class="page-title">
-        <span class="page-title-box">Snake Hunt</span>
-    </h1>
 
     <!--Difficulty overlays -->
     <div class="overlay-text" id="easy-overlay">
@@ -236,9 +234,6 @@
                     alt="snake">
             </div>
         </div>
-
-
-
     </div>
     <br><br><br>
     <footer>

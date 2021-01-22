@@ -111,6 +111,7 @@ class AudioController {
     gameOver() {
         this.stopMusic();
         this.gameOverSound.play();
+        roundNumber--;
     }
 }
 // object that is used to construct new functions
@@ -129,7 +130,12 @@ class MixOrMatch {
         // my variable to restart game
         this.restart = document.getElementById("restart-button");
         // my restart game click handler
-        this.restart.addEventListener('click', () => window.location.reload());
+        this.restart.addEventListener('click', () => this.roundReload());
+    }
+    roundReload() {
+        roundNumber--;
+        localStorage.setItem('round-number', roundNumber);
+        window.location.reload();
     }
     // Start the game function
     startGame() {
