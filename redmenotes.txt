@@ -1,12 +1,7 @@
 
 TO DO README
-put links in link format
 Deployment
-conclusion
-User stories
 update validation images before submit
-
-
 deployment 
 
 you want to go into full details about how another user can easily clone your project locally on their set (provide the actual clone command to them using your repo name,

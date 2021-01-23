@@ -55,7 +55,7 @@ The goal of my website is to entertain the user with a game whilst showcasing my
     1. I want to see clean code and comments.
     1. I want the application to be as bug free as possible.
     1. I want to see a well documented README.  
-    
+
 
 ## Website Sections
 
@@ -236,8 +236,56 @@ As I was following a turorial I didn't really put much thought into my wireframe
 <a name="deploy"></a>
 ## Deployment
 
+### Deployment
+Snake Hunt was deployed to my domain www.kenanwright.online hosted by One.com. To deploy on your hosting service follow these steps:
+1. Login to Github and find the project here [here](https://github.com/Kdoggg666/MS2)
+2. Click the Code dropdown menu and select download Zip file  
+![Download Zip](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611398283/images/albums/MS2/downloadZip.png)  
+3. Once the zip file has been downloaded extract it to your pc.
+4. Login to your hosting control panel and look for File Manager or similar. You can also use FTP to push the files to your site.
+5. Upload the contents of the Zip file downloaded from GitHub to your main directory. 
+6. Click save
+7. Your website should be live. 
+
+Snake Hunt was deployed GitHub Pages, using the following steps:
+1. Create a Github account or login [here](www.github.com)
+2. Create a new repository named "Snake Hunt"
+![New Repo](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611398401/images/albums/MS2/new_repo.png)  
+3. click Settings and scroll to the Github Pages section
+![Settings](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611398501/images/albums/MS2/settings.png)
+4. In the branch dropdown menu select Master
+![Github Pages](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611398578/images/albums/MS2/pages.png)
+5. Select a folder to deploy it from, the default is usually root. 
+6. Click save. It will take a while to become live. 
+7. A live URL will be created for you and can be located above Source
+
+### Fork Snake Hunt
+1. Create a Github account or login [here](www.github.com)
+2. On GitHub, go to [Kdoggg666/MS2](https://github.com/Kdoggg666/MS2/)
+3. Look for the fork button, top right under your profile picture  
+![Fork](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611398815/images/albums/MS2/fork.png)
+
+### Clone Snake Hunt
+1. Create a Github account or login [here](www.github.com)
+2. Fork the project as detailed in the steps above
+3. Click the code button  
+![Code](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611399312/images/albums/MS2/clone1.png)  
+4. Select to clone with HTTPS/SSH/GithubCli and click the copy icon on the right  
+5. In your editor software eg. GitBash, GitPod, VSCode open the terminal    
+  
+![Terminal](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611399959/images/albums/MS2/CLI.png)  
+
+6. Navigate to the destination which you want to be the destination for the clone.
+7. Type gitclone if you selected HTTPS or SSH and paste the copied code. If you used GithubCLi just paste the code you copied.  
+![GitHubCli](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611400298/images/albums/MS2/ghCLI.png)  
+or  
+![gitclone](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611400375/images/albums/MS2/gitclone.png)
+8. Press Enter to create your clone.
+
 <a name="conclude"></a>
 ## Conclusion
+
+This project has been extremely challenging and has really improved my skills as a developer. It was daunting at first and I really had to push myself way past my comfort zone. I feel I have learned so much and ended up realy enjoying the process. It's an incredible feeling to finally be finished with a project that I was sure I would never complete. 
 
 <a name="colab"></a>
 ## Collabirations and Contact
