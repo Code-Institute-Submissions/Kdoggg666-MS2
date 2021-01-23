@@ -38,8 +38,25 @@ Live Example [Here](https://www.kenanwright.online)
 <a name="userx"></a>
 ## User Experience Goals
 The goal of my website is to entertain the user with a game whilst showcasing my design and programming skills. The user should be engaged and have fun playing the game. The user should also want to play multiple times and attempt a better score. 
-!!!!ADD MORE HERE!!!!!!
-Userstory
+
+#### User Stories
+
+- ####  As a player
+    1. I want to have fun playing the game.
+    1. I want to be challenged and entertained.
+    1. I want to see my score and try to get better each round.
+    1. I want to be able to chose the difficulty most appropriate to me.
+    1. I want the disign to be aesthetically pleasing.
+    1. I want to be able to play over multiple sessions and keep my scores.
+
+- #### As an assessor
+    1. I want to see a clean well designed project.
+    1. I want to determine the knowledge and skill of the person I am assessing.
+    1. I want to see clean code and comments.
+    1. I want the application to be as bug free as possible.
+    1. I want to see a well documented README.  
+    
+
 ## Website Sections
 
 #### Theme and style
@@ -117,7 +134,7 @@ I have used the local storage API to store the users highscore, round number and
 **Stack Overflow** - I found multiple solutions for issues I ran into on stack overflow and have credited the post in a comment above the code.
 
 ## Sound Credits
-All music and sound effects created by me using Presonus Studio One 5.  
+All music and sound effects created by me using [Presonus Studio One 5](http://www.presonus.com)    
 ![Studio One](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611395342/images/albums/MS2/presonus.webp "Presonus")
 
 ### Photo Credits
@@ -152,11 +169,11 @@ All music and sound effects created by me using Presonus Studio One 5.
 
 <a name="testing"></a>
 ## Testing
- To test this site I used multiple devices such as an iphone, ipad, macbook, windows 10 laptop, my desktop PC and a Huawei media pad. I also frequently asked my friends and family to play this game on their devices and provide me feedback. My friends dicovered the bugs with the score, the mute button and the media volume. My sister helped by testing on her Macbook and iphone as well as providing feedback on the responsiveness and layout. I used Google Chrome Devtools to debug code by logging certain stages and loops that I was testing to the console so I could see what was happenning when as well as see any issues that get thrown up by the console. I also discovered that by visiting chrome://inspect you can log the console of a website on mobile devices which proved very helpful. 
+ To test this site I used multiple devices such as an iphone, ipad, macbook, windows 10 laptop, my desktop PC and a Huawei media pad. I also frequently asked my friends and family to play this game on their devices and provide me feedback. My friends dicovered the bugs with the score, the mute button and the media volume. My sister helped by testing on her Macbook and iphone as well as providing feedback on the responsiveness and layout. I used Google Chrome Devtools to debug code by logging certain stages and loops that I was testing to the console so I could see what was happenning when as well as see any issues that get thrown up by the console. I also discovered that by visiting chrome://inspect you can log the console of a website on mobile devices which proved very helpful. Code institue Tutor Support proved invaluable to me during this project and I made frequent use of the service. My Mentor Rahul Patil pushed me to do my best work as well as pointed out issues and guided me. 
 
 ![Am I Responsive?](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610884303/images/albums/MS2/amiresponsiveMS2.png)
 ![Mobile Testing](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610554623/images/albums/MS2/phonetesting.png)
-![1440p](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556562/images/albums/MS2/1440p_hwvihl.png)
+![1440p](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556562/images/albums/MS2/1440p.png)
 ![1080p](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556559/images/albums/MS2/1080p.png)
 ![mobile-landscape](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556700/images/albums/MS2/mobile-landscape.jpg)
 ![Chrome://inspect](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556902/images/albums/MS2/chrome-inspect.jpg)
@@ -175,33 +192,34 @@ All music and sound effects created by me using Presonus Studio One 5.
 
 <a name="trouble"></a>
 ## Issues and Troubleshooting
-**Images and audio not always loading with the page** the background images for divs were showing in python server preview but not in github live page or gitpod preview, this was fixed fixed by using the relative path.  
-  
-**Overlays were too big on smaller screens** this was fixed using media queries.  
-  
-**Score not clearing after restarting game** - Every time the user would win then play again the score would be displayed underneath the previous score. I fixed this with a loop that checks if there is inner html in the victory text and removes it on game start.   
-  
-**if statement to check remaining time and assign stars** - The code block I wrote was always appeding the test from the first if option no matter what the users time remaining was.I tried logging current time to console to see what im checking against. I also tried googling loops. I fixed this by double checking syntax and rewriting the code and testing.  
-  
-**Match sound not playing after match in short succession** - This issue was mostly fixed by shortening the audio file and removing silence at the end, however this still occurs when two pairs are matched in before the sound stops playing, I was not able to resolve this in time.  
-  
-**Mute button** - I couldnt get the event listener on the mute button to both change the FA icon AND pay/pause the background music. I fixed this by making the icon toggle function call the music toggle function after changing the FA class.  
-  
-**Mute button triggering twice after victory** The mute button would work fine the first game but after victory or game over it would trigger the if statement twice. This was fixed by moving my click function into the right constructor and writing a custom function that remembers if music was muted or not.   
-  
-**Cards always showing face up on IOS and Safari** - On all browsers on an IOS device including chrome as well as on Safari on Mac devices the cards would deal face up. This was solved by adding -webkit- prefix to all animations and transform effects.  
-  
-**Cards getting highlighted** - Its easy to accidentally drag the mouse and highlight cards - This was fixed by using the css user-select: none on the body.  
 
-**Users were able to drag cards** - Fixed with code from [Stack overflow](https://stackoverflow.com/questions/704564/disable-drag-and-drop-on-html-elements#:~:text=You%20can%20disable%20dragging%20simply,draggable%3D%22false%22%20attribute)  
+**Images and audio not always loading with the page:** The background images for divs were showing in python server preview but not in github live page or gitpod preview, this was fixed fixed by using the relative path.  
+  
+**Overlays were too big on smaller screens:** This was fixed using media queries.  
+  
+**Score not clearing after restarting game:** Every time the user would win then play again the score would be displayed underneath the previous score. I fixed this with a loop that checks if there is inner html in the victory text and removes it on game start.   
+  
+**if statement to check remaining time and assign stars:** The code block I wrote was always appeding the test from the first if option no matter what the users time remaining was.I tried logging current time to console to see what im checking against. I also tried googling loops. I fixed this by double checking syntax and rewriting the code and testing.  
+  
+**Match sound not playing after match in short succession:** This issue was mostly fixed by shortening the audio file and removing silence at the end, however this still occurs when two pairs are matched in before the sound stops playing, I was not able to resolve this in time.  
+  
+**Mute button:** I couldnt get the event listener on the mute button to both change the FA icon AND pay/pause the background music. I fixed this by making the icon toggle function call the music toggle function after changing the FA class.  
+  
+**Mute button triggering twice after victory:** The mute button would work fine the first game but after victory or game over it would trigger the if statement twice. This was fixed by moving my click function into the right constructor and writing a custom function that remembers if music was muted or not.   
+  
+**Cards always showing face up on IOS and Safari:** On all browsers on an IOS device including chrome as well as on Safari on Mac devices the cards would deal face up. This was solved by adding -webkit- prefix to all animations and transform effects.  
+  
+**Cards getting highlighted:** Its easy to accidentally drag the mouse and highlight cards - This was fixed by using the css user-select: none on the body.  
 
-**Clicking outside the modal on start** - Clicking outside the modal would load the page without the overlays and would not start the JS. Fixed with code from [Stack overflow](https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up)  
+**Users were able to drag cards:** Fixed with code from [Stack overflow](https://stackoverflow.com/questions/704564/disable-drag-and-drop-on-html-elements#:~:text=You%20can%20disable%20dragging%20simply,draggable%3D%22false%22%20attribute)  
 
-**Setting Game time based on difficulty** - Innitially I struggled with this, at first I tried several functions which would define the game variable and pass a number to the class, however I couldnt seem to get this to work. I instead found a simpler more effective way of doing this by using a variable that is set to a number based on user difficulty choice and passing that variable to the class.
+**Clicking outside the modal on start:** Clicking outside the modal would load the page without the overlays and would not start the JS. Fixed with code from [Stack overflow](https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up)  
 
-**Round number resetting on page reload** - fixed by storing round number to local storage instead of on the main.js file. This will remember the round after reload and not reset round number as hitting restart reloads the page, thus starting from round 1 again and will overwrite the first score on the scoreboard. 
+**Setting Game time based on difficulty:** Innitially I struggled with this, at first I tried several functions which would define the game variable and pass a number to the class, however I couldnt seem to get this to work. I instead found a simpler more effective way of doing this by using a variable that is set to a number based on user difficulty choice and passing that variable to the class.
 
-**Music choice not being saved** - After extensive googling and tutor support I realised that the local storage was treating true and false as a string and not a boolean. Fixed by changing my if statement to check if variable is "false" instead of false.
+**Round number resetting on page reload:** Fixed by storing round number to local storage instead of on the main.js file. This will remember the round after reload and not reset round number as hitting restart reloads the page, thus starting from round 1 again and will overwrite the first score on the scoreboard. 
+
+**Music choice not being saved:** After extensive googling and tutor support I realised that the local storage was treating true and false as a string and not a boolean. Fixed by changing my if statement to check if variable is "false" instead of false.
 
 ## Features I would like to impliment
 
