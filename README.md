@@ -59,7 +59,7 @@ The welcome modal opens when the page loads, explaining the rules to the user an
 My game is a card flipping game where the user must click on a card to reveal a snake, then try to find the matching card. I have 3 difficulties, easy, medium and Jedi(hard). On easy the game will deal a grid of 2x6 cards and have an 80 second time limit. Medium is a 3x6 grid and a 120 second time limit. Hard is a 4x6 grid with a 180 second time limit. if the user runs out of time the game over screen will appear and the user will be prompted to try again. If the user finds all the matches the victory screen will appear and the user will be given a score and a star rating. 
 ![Game Area](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391457/images/albums/MS2/game_area.png "Game Area")
 #### Footer
-I have chosen to keep the footer simple with only Font Awesome icons with animations which link to the main social media sites as well as Github.
+I have chosen to keep the footer simple with only Font Awesome icons with animations which link to the main social media sites as well as Github.  
 ![Footer](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391536/images/albums/MS2/footer.png "Footer")
 #### Overlays
 The overlays will display when a difficulty has been selected, the user runs out of time or upon victory. The victory overlay will show the users score as well as show them how many stars they were awarded.
@@ -81,7 +81,7 @@ The users best score will be shown between the time and flips sections after the
 ![Score Board After](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611392106/images/albums/MS2/scoreboard-after.png "Scoreboard After")
 ![Best Score](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611392470/images/albums/MS2/best.png "best")
 #### Local Storage
-I have used the local storage API to store the users highscore, round number and last 5 rounds which will display even after the user has refreshed the browser.  
+I have used the local storage API to store the users highscore, round number and last 5 rounds which will display even after the user has refreshed the browser. I have also use local storage to check if the user has muted the music after restart.
 ![Local Storage Keys](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611392324/images/albums/MS2/local_storage_keys.png "Local Storage")
 
 <a name="technologies"></a>
@@ -121,33 +121,33 @@ All music and sound effects created by me using Presonus Studio One 5
 
 ### Photo Credits
    
-**Background image** - https://wallpapercave.com/wp/wp4578398.jpg
+**Background image** - [Wallpaper Cave](https://wallpapercave.com/wp/wp4578398.jpg)  
 
-**Card Background** - https://www.amazon.com/Journal-Green-dragon-scales-notebook/dp/1534828729#ace-g6002737843  
+**Card Background** - [Amazon](https://www.amazon.com/Journal-Green-dragon-scales-notebook/dp/1534828729#ace-g6002737843)  
   
-**Bush Viper card** - https://www.ndtv.com/offbeat/world-snake-day-2020-a-look-at-5-really-strange-snakes-2263726 
+**Bush Viper card** - [NDTV](https://www.ndtv.com/offbeat/world-snake-day-2020-a-look-at-5-really-strange-snakes-2263726)  
   
-**Two headed snake** - https://media1.s-nbcnews.com/j/newscms/2020_43/3422181/201022-two-headed-reptile-2x1-se-235p_ee73360f2cbd8ecb69ad9696995717d8.nbcnews-fp-1200-630.jpg  
+**Two headed snake** - [NBC News](https://media1.s-nbcnews.com/j/newscms/2020_43/3422181/201022-two-headed-reptile-2x1-se-235p_ee73360f2cbd8ecb69ad9696995717d8.nbcnews-fp-1200-630.jpg)  
   
-**Blue Pit Viper** - https://www.treehugger.com/thmb/5t2mDj3vilf5qexKV3G9v7sYxrg=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2017__02__blue-snake-563713d8718f4144a0ad450a2acef109.jpg    
+**Blue Pit Viper** - [Tree Hugger](https://www.treehugger.com/thmb/5t2mDj3vilf5qexKV3G9v7sYxrg=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2017__02__blue-snake-563713d8718f4144a0ad450a2acef109.jpg)    
   
-**Coral Snake** - https://www.gannett-cdn.com/presto/2020/10/26/PWWF/7e6dfe27-932c-41b8-83ea-8c536377b07c-Milksnake.jpg?width=660&height=383&fit=crop&format=pjpg&auto=webp    
+**Coral Snake** - [Gannet](https://www.gannett-cdn.com/presto/2020/10/26/PWWF/7e6dfe27-932c-41b8-83ea-8c536377b07c-Milksnake.jpg?width=660&height=383&fit=crop&format=pjpg&auto=webp)    
   
-**White Cobra** - https://www.dw.com/image/50193312_101.jpg    
+**White Cobra** - [Deutsche Welle (DW)](https://www.dw.com/image/50193312_101.jpg)    
   
-**Viper Bite** - https://www.sciencenews.org/wp-content/uploads/2020/09/092620_cw_snakebite_feat.jpg  
+**Viper Bite** - [Science News](https://www.sciencenews.org/wp-content/uploads/2020/09/092620_cw_snakebite_feat.jpg)  
   
-**Indian Cobra** - https://cms.qz.com/wp-content/uploads/2019/02/RTXLA3F-e1551362816993.jpg?quality=75&strip=all&w=1600&h=900&crop=1  
+**Indian Cobra** - [Quartz](https://cms.qz.com/wp-content/uploads/2019/02/RTXLA3F-e1551362816993.jpg?quality=75&strip=all&w=1600&h=900&crop=1)    
   
-**Emerald Tree Boa** - https://commons.wikimedia.org/wiki/File:Emerald_Tree_Boas_NC.jpg  
+**Emerald Tree Boa** - [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Emerald_Tree_Boas_NC.jpg)  
 
-**Cape Coral Cobra** - https://www.sciencemag.org/news/2020/01/tiny-organs-grown-snake-glands-produce-real-venom
+**Cape Coral Cobra** - [Science Mag](https://www.sciencemag.org/news/2020/01/tiny-organs-grown-snake-glands-produce-real-venom)  
 
-**pastel Ball Python** - https://www.everythingreptiles.com/pastel-ball-python/
+**pastel Ball Python** - [Everything Reptiles](https://www.everythingreptiles.com/pastel-ball-python/)  
 
-**Grey Ball Python** - https://www.reptilesmagazine.com/trademark-exotics-and-piebald-ball-pythons/
+**Grey Ball Python** - [Reptiles Magazine](https://www.reptilesmagazine.com/trademark-exotics-and-piebald-ball-pythons/)  
 
-**Green Viper** - https://safety4sea.com/deadly-snake-found-on-african-ship/
+**Green Viper** - [Safety 4 Sea](https://safety4sea.com/deadly-snake-found-on-african-ship/)  
 
 <a name="testing"></a>
 ## Testing
@@ -192,9 +192,9 @@ All music and sound effects created by me using Presonus Studio One 5
   
 **Cards getting highlighted** - Its easy to accidentally drag the mouse and highlight cards - This was fixed by using the css user-select: none on the body.  
 
-**Users were able to drag cards** - Fixed with code from https://stackoverflow.com/questions/704564/disable-drag-and-drop-on-html-elements#:~:text=You%20can%20disable%20dragging%20simply,draggable%3D%22false%22%20attribute.
+**Users were able to drag cards** - Fixed with code from [Stack overflow](https://stackoverflow.com/questions/704564/disable-drag-and-drop-on-html-elements#:~:text=You%20can%20disable%20dragging%20simply,draggable%3D%22false%22%20attribute)  
 
-**Clicking outside the modal on start** - Clicking outside the modal would load the page without the overlays and would not start the JS. Fixed with code from https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up
+**Clicking outside the modal on start** - Clicking outside the modal would load the page without the overlays and would not start the JS. Fixed with code from [Stack overflow](https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up)  
 
 **Setting Game time based on difficulty** - Innitially I struggled with this, at first I tried several functions which would define the game variable and pass a number to the class, however I couldnt seem to get this to work. I instead found a simpler more effective way of doing this by using a variable that is set to a number based on user difficulty choice and passing that variable to the class.
 
