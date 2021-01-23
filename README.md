@@ -8,8 +8,11 @@ See Media Credits section for media citations. All music and sound effects creat
 My name is Kenan Wright, I am currently an enthusiast beginner web developer. I am currently studying software development through Code Institute. I have a passion for music, technology, nature and reptiles. I work 40 hours a week and study 20. 
 
 ##  Snake Hunt Javascript Memory Game
-For my second project I have decided to merge a few of my passions Reptiles, music and programming. I decided to make a memory game using a snake theme paired with music and sound effects which I have created myself. I started by following a tutorial which I then customised and added custom functionality. A link to the tutorial can be found under the Code Credits section of this README.
-Live Example [Here](https://www.kenanwright.online)  
+For my second project I have decided to merge a few of my passions Reptiles, music and programming. I decided to make a memory game using a snake theme paired with music and sound effects which I have created myself. I started by following a tutorial which I then customised and added custom functionality. A link to the tutorial can be found under the Code Credits section of this README.  
+
+Live example for assessment: [Snake Hunt](https://kdoggg666.github.io/MS2/)  
+
+I have also deployed Snake Hunt to my domain [Here](http://www.kenanwright.online) but for assesment please use the Github Pages link above as this will always be the most up-to-date version. 
 
 ## Table of Contents
 
