@@ -117,7 +117,8 @@ I have used the local storage API to store the users highscore, round number and
 **Stack Overflow** - I found multiple solutions for issues I ran into on stack overflow and have credited the post in a comment above the code.
 
 ## Sound Credits
-All music and sound effects created by me using Presonus Studio One 5
+All music and sound effects created by me using Presonus Studio One 5.  
+![Studio One](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611395342/images/albums/MS2/presonus.webp "Presonus")
 
 ### Photo Credits
    
