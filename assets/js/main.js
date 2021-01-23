@@ -5,35 +5,28 @@ let gameDay = gameDate.getDate();
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let gameMonth = months[gameDate.getMonth()];
 let shortDate = gameDay + " " + gameMonth;
-// My variable to check which round it is
+// My variables
 let gameTime;
 let difficulty;
 let isPlay;
 let savedRoundNumber = localStorage.getItem('round-number');
 let roundNumber;
 let isPlaySaved = localStorage.getItem("is-play");
-console.log(isPlaySaved)
 isPlay = isPlaySaved;
-console.log(isPlay);
 getRoundNumber();
 checkMusic();
-
+//My function to chekc weather the user has muted music previously.
 function checkMusic() {
     if (isPlay === "false") {
         $("#mute-button").removeClass("fa-volume-mute");
         $("#mute-button").addClass("fa-play");
-        console.log("is play is false");
     } else if (isPlay === null){
-        
-        console.log("is play is null");
+        return;
     } else {
         $("#mute-button").removeClass("fa-play");
         $("#mute-button").addClass("fa-volume-mute");
-        console.log("is play is else");
     }
 }
-
-
 //My function to check if the user has a previous round number stored in local storage and apply that if need be
 function getRoundNumber() {
     if (savedRoundNumber !== NaN) {
@@ -84,8 +77,6 @@ class AudioController {
         this.victorySound.volume = 0.6;
         this.gameOverSound.volume = 0.6;
         this.matchSound.volume = 0.5;
-        //my variable to check weather audio is playing
-        
     }
     startMusic() {
         this.bgMusic.play();
@@ -305,7 +296,7 @@ class MixOrMatch {
         } else if (roundNumber === 5) {
             $("#score-five").html(totalScore + " - " + difficulty + " - " + shortDate);
             localStorage.setItem('score-five', totalScore + " - " + difficulty + " - " + shortDate);
-        };
+        }
         //my code to check if the current score is higher than the high score and replace it if need be
         let highScore = $("#high-score").html;
         if ($("#high-score").html() >= totalScore) {
@@ -446,7 +437,7 @@ function hardMode() {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    // constructor that i changed to take a variable so that when you select a difficulty the game time is changed. 
+    // constructor that I changed to take a variable so that when you select a difficulty the game time is changed. 
     let game = new MixOrMatch(gameTime, cards);
     // add event listener for each overlay
     overlays.forEach(overlay => {

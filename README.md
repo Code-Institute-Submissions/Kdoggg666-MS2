@@ -21,33 +21,41 @@ Userstory
 For the theme I have used shades of orange and green as found on some of my favourite snakes and lizards and also match the background I have used. I have used 3 google fonts, Ranchers, Big Shoulders and Monda which I selected for their aesthetics and readibility. 
 
 #### Top Bar
-Instead of a Navbar which I feel would be pointless on a single page game, I instead made a button to mute the music which remembers your choice after victory or game over. I have also added a restart button which reloads the page and starts the game all over again.
+Instead of a Navbar which I feel would be pointless on a single page game, I instead made a button to mute the music which remembers your choice after victory, game over, restart or browser close. I have also added a restart button which reloads the page and starts the game all over again as well as removing 1 from the round number so that there wont be a blank spot on the last 5 rounds scoreboard.
+![Top Bar](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391244/images/albums/MS2/top-bar.png "Top Bar")
+#### Time and flips
+This area shows the user the remaining time, their highest or "best" score and the ammount of flips used.
+![Time and Flips](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611392655/images/albums/MS2/time_and_flips.png "Tikme and Flips")
 
 #### Welcome modal
 The welcome modal opens when the page loads, explaining the rules to the user and prompting them to select a difficulty. Each difficulty will trigger its own overlay with an icon representing the difficulty and prompting the user to click to start the game.
-
+![Modal](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391347/images/albums/MS2/modal.png "Welcome-Modal")
 #### Memory game
 My game is a card flipping game where the user must click on a card to reveal a snake, then try to find the matching card. I have 3 difficulties, easy, medium and Jedi(hard). On easy the game will deal a grid of 2x6 cards and have an 80 second time limit. Medium is a 3x6 grid and a 120 second time limit. Hard is a 4x6 grid with a 180 second time limit. if the user runs out of time the game over screen will appear and the user will be prompted to try again. If the user finds all the matches the victory screen will appear and the user will be given a score and a star rating. 
-
-
-
+![Game Area](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391457/images/albums/MS2/game_area.png "Game Area")
 #### Footer
 I have chosen to keep the footer simple with only Font Awesome icons with animations which link to the main social media sites as well as Github.
-
+![Footer](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391536/images/albums/MS2/footer.png "Footer")
 #### Overlays
 The overlays will display when a difficulty has been selected, the user runs out of time or upon victory. The victory overlay will show the users score as well as show them how many stars they were awarded.
-
+![Game Over](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391586/images/albums/MS2/game-over.png "Game Over")
+![Winner](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391724/images/albums/MS2/winner.png "Winner")
+![Easy Mode](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391839/images/albums/MS2/easy_mode.png "Easy")
+![Medium Mode](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391838/images/albums/MS2/medium_mode.png "medium")
+![Jedi Mode](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391839/images/albums/MS2/jedi_mode.png "Jedi")
 ## functionality
 
 #### Score
-The user attempts to get all the matches within 100 seconds. They will be rewarded with 0 to 3 stars. I decideed on a formula for scoring which takes the ramaining time and multiplies it by a base number of 200 - the amount of used flips. I did this because the more flips a player uses the less the multiplyer would be. Stars are then awarded based on total points.
-
+The user attempts to get all the matches within the time limit. They will be rewarded with 0 to 3 stars. I decided on a formula for scoring which takes the ramaining time and multiplies it by a base number of 200 minus the amount of used flips. I did this because the more flips a player uses the less the multiplyer would be. Stars are then awarded based on total points besed on difficulty level. 
+![Score](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391999/images/albums/MS2/score.png "score")
 #### Scoreboard
-The users best score will be shown between the time and flips sections after the first round has been completed. I used a function which checks if the current score is greater than the high score and replaces it if need be. The players last 5 attempts will be shown in the scoreboard to the left but only on devices with enough space to show this without covering the game area.
-
+The users best score will be shown between the time and flips sections after the first round has been completed. I used a function which checks if the current score is greater than the high score and replaces it if need be. The players last 5 attempts will be shown in the scoreboard to the left but only on devices with enough space to show this without covering the game area.  
+![Score Board Before](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611392106/images/albums/MS2/scoreboard_before.png "Scoreboard before")
+![Score Board After](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611392106/images/albums/MS2/scoreboard-after.png "Scoreboard After")
+![Best Score](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611392470/images/albums/MS2/best.png "best")
 #### Local Storage
-I have used local storage to store the users highscore which will display the users highest score even after the user has refreshed the browser. For this I have used the local storage API.  
-
+I have used the local storage API to store the users highscore, round number and last 5 rounds which will display even after the user has refreshed the browser.  
+![Local Storage Keys](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611392324/images/albums/MS2/local_storage_keys.png "Local Storage")
 ## Technologies Used
 **One Hosting** - I have registered my own domain and am using it to deploy my live site. [One.com Hosting](http://www.one.com)  
 **Github** - Github was used for storing my code and version control.  
@@ -121,6 +129,10 @@ All music and sound effects created by me using Presonus Studio One 5
 ![mobile-landscape](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556700/images/albums/MS2/mobile-landscape.jpg)
 ![Chrome://inspect](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610556902/images/albums/MS2/chrome-inspect.jpg)
 ![Welcome Modal](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610884140/images/albums/MS2/1440p_with_modal.png)
+![More testing](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611393057/images/albums/MS2/testing.png)
+![iPad](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611393151/images/albums/MS2/ipad.png)
+![iPhone](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611393212/images/albums/MS2/iphone.png)
+![Galaxy](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611393313/images/albums/MS2/galaxy.png)
 ## Validation
 **CSS** - CSS validated at CSS Level 3+ SVG with only some warnings about using -moz- and -webkit- prefixes.   
 ![CSS Validation](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610555618/images/albums/MS2/validation/css-validation.png)  
@@ -160,7 +172,7 @@ All music and sound effects created by me using Presonus Studio One 5
 
 ## Features I would like to impliment
 
-I would like to implament an input that stores the players name and displays it on the page somewhere however space is very limited especially on smaller displays and I didn't have time to implament this. I would also like to come up with a better equasion for scoring. I would like to write a function that changes how the game is scored based on difficulty selected, however I feel I dont have time to implament and test this before the submition deadline. I would also like to find a way to make this game better for mobile as it is responsive however there just isnt enough space on small devices to show all the cards on one screen.
+I would like to implament an input that stores the players name and displays it on the page somewhere however space is very limited especially on smaller displays and I didn't have time to implament this. I would also like to come up with a better equasion for scoring. I would also like to find a way to make this game better for mobile as it is responsive however there just isnt enough space on small devices to show all the cards on the screen without having to scroll. An online leaderboard that could show players names as well as highscores is something that I have looked into however I will not have time before the submission deadline. 
 
 ## Wireframes
 
