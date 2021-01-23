@@ -9,8 +9,33 @@ My name is Kenan Wright, I am currently an enthusiast beginner web developer. I 
 
 ##  Snake Hunt Javascript Memory Game
 For my second project I have decided to merge a few of my passions Reptiles, music and programming. I decided to make a memory game using a snake theme paired with music and sound effects which I have created myself. I started by following a tutorial which I then customised and added custom functionality. A link to the tutorial can be found under the Code Credits section of this README.
-Live Example [Here](https://www.kenanwright.online)
+Live Example [Here](https://www.kenanwright.online)  
 
+## Table of Contents
+
+[User Experience Goals](#userx)
+
+[Functionality](#functionality)
+
+[Technologies Used](#technologies)
+
+[Credits](#credits)
+
+[Testing](#testing)
+
+[Issues and Troubleshooting](#trouble)
+
+[Wireframes](#wireframe)
+
+[Deployment](#deploy)
+
+[Conclusion](#conclude)
+
+[Collabirations and Contact](#colab)
+
+
+
+<a name="userx"></a>
 ## User Experience Goals
 The goal of my website is to entertain the user with a game whilst showcasing my design and programming skills. The user should be engaged and have fun playing the game. The user should also want to play multiple times and attempt a better score. 
 !!!!ADD MORE HERE!!!!!!
@@ -43,6 +68,8 @@ The overlays will display when a difficulty has been selected, the user runs out
 ![Easy Mode](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391839/images/albums/MS2/easy_mode.png "Easy")
 ![Medium Mode](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391838/images/albums/MS2/medium_mode.png "medium")
 ![Jedi Mode](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611391839/images/albums/MS2/jedi_mode.png "Jedi")
+
+<a name="functionality"></a>
 ## functionality
 
 #### Score
@@ -56,6 +83,8 @@ The users best score will be shown between the time and flips sections after the
 #### Local Storage
 I have used the local storage API to store the users highscore, round number and last 5 rounds which will display even after the user has refreshed the browser.  
 ![Local Storage Keys](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611392324/images/albums/MS2/local_storage_keys.png "Local Storage")
+
+<a name="technologies"></a>
 ## Technologies Used
 **One Hosting** - I have registered my own domain and am using it to deploy my live site. [One.com Hosting](http://www.one.com)  
 **Github** - Github was used for storing my code and version control.  
@@ -78,6 +107,7 @@ I have used the local storage API to store the users highscore, round number and
 **Mozilla Firefox** - Used for testing.
 **Opera** - Used for testing.
 
+<a name="credits"></a>
 ## Code Credits
 **PortEXE** - Memory game tutorial used and customised from [PortEXE on Youtube](https://www.youtube.com/watch?v=3uuQ3g92oPQ)  
 **WebDevSimplified** - CS layout tutorial used then customised and changed [WebDevSimplified on Youtube](https://www.youtube.com/watch?v=28VfzEiJgy4)  
@@ -119,6 +149,7 @@ All music and sound effects created by me using Presonus Studio One 5
 
 **Green Viper** - https://safety4sea.com/deadly-snake-found-on-african-ship/
 
+<a name="testing"></a>
 ## Testing
  To test this site I used multiple devices such as an iphone, ipad, macbook, windows 10 laptop, my desktop PC and a Huawei media pad. I also frequently asked my friends and family to play this game on their devices and provide me feedback. My friends dicovered the bugs with the score, the mute button and the media volume. My sister helped by testing on her Macbook and iphone as well as providing feedback on the responsiveness and layout. I used Google Chrome Devtools to debug code by logging certain stages and loops that I was testing to the console so I could see what was happenning when as well as see any issues that get thrown up by the console. I also discovered that by visiting chrome://inspect you can log the console of a website on mobile devices which proved very helpful. 
 
@@ -141,6 +172,7 @@ All music and sound effects created by me using Presonus Studio One 5
 **Jshint Validation** - Jshint shows no errors and only some warnings about certain code only being available in JS ES6.  
 ![JS Validation](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610555618/images/albums/MS2/validation/jshint.png)  
 
+<a name="trouble"></a>
 ## Issues and Troubleshooting
 **Images and audio not always loading with the page** the background images for divs were showing in python server preview but not in github live page or gitpod preview, this was fixed fixed by using the relative path.  
   
@@ -174,15 +206,20 @@ All music and sound effects created by me using Presonus Studio One 5
 
 I would like to implament an input that stores the players name and displays it on the page somewhere however space is very limited especially on smaller displays and I didn't have time to implament this. I would also like to come up with a better equasion for scoring. I would also like to find a way to make this game better for mobile as it is responsive however there just isnt enough space on small devices to show all the cards on the screen without having to scroll. An online leaderboard that could show players names as well as highscores is something that I have looked into however I will not have time before the submission deadline. 
 
+<a name="wireframe"></a>
 ## Wireframes
 
 As I was following a turorial I didn't really put much thought into my wireframes as after I was done with the tutorial I changed all the css and a lot of the layout through trial and error to see what I liked.
 
 ![Snake Hunt Memory Game](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610553297/images/albums/MS2/memory-game.png "Snake Hunt")
 ![Snake Hunt Memory Game Mobile](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610884791/images/albums/MS2/memory-game-responsive.png "Snake Hunt Mobile")
+
+<a name="deploy"></a>
 ## Deployment
 
+<a name="conclude"></a>
 ## Conclusion
 
+<a name="colab"></a>
 ## Collabirations and Contact
 For any questions reguarding the site, my work or collaborations please feel free to email me at kenanwright@gmail.com.
