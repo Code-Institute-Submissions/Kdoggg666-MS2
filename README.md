@@ -187,11 +187,11 @@ All music and sound effects created by me using [Presonus Studio One 5](http://w
 ![Galaxy](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611393313/images/albums/MS2/galaxy.png)
 ## Validation
 **CSS** - CSS validated at CSS Level 3+ SVG with only some warnings about using -moz- and -webkit- prefixes.   
-![CSS Validation](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610555618/images/albums/MS2/validation/css-validation.png)  
+![CSS Validation](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611401813/images/albums/MS2/validation/css-validation.png)  
 **HTML** - HTML Validated with no errors or warnings.  
-![HTML Validation](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610555618/images/albums/MS2/validation/html-validator.png)  
+![HTML Validation](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611401904/images/albums/MS2/validation/html-validator.png)  
 **Jshint Validation** - Jshint shows no errors and only some warnings about certain code only being available in JS ES6.  
-![JS Validation](https://res.cloudinary.com/dyxe4g62g/image/upload/v1610555618/images/albums/MS2/validation/jshint.png)  
+![JS Validation](https://res.cloudinary.com/dyxe4g62g/image/upload/v1611401686/images/albums/MS2/validation/jshint.png)  
 
 <a name="trouble"></a>
 ## Issues and Troubleshooting
