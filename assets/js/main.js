@@ -123,6 +123,7 @@ class MixOrMatch {
         // my restart game click handler
         this.restart.addEventListener('click', () => this.roundReload());
     }
+    //My code that removes 1 from round number and reloads the page to bring up the welcome modal
     roundReload() {
         roundNumber--;
         localStorage.setItem('round-number', roundNumber);
@@ -318,7 +319,6 @@ class MixOrMatch {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
             }
         }
-
         function scoreMedium() {
             if (totalScore >= 16000) {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");
@@ -330,7 +330,6 @@ class MixOrMatch {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> Sorry, You get no Stars! <br>" + "<br><i class='fas fa-sad-cry fa-spin'></i><br><br>Click to start over!");
             }
         }
-
         function scoreJedi() {
             if (totalScore >= 20000) {
                 document.getElementById("winner").insertAdjacentHTML("beforeend", "<br> You get Three Stars! <br>" + "<br><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><i class='fas fa-star fa-spin'></i><br><br>Click to start over!");

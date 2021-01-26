@@ -131,15 +131,11 @@ body.modal-open {
     display: none;
 }
 
-
-
-
 /* --------- Memory Game ------------- */
 
 /* --------- Welcome Modal -------------------*/
 
 .modal-header {
-
     background-color: black;
     text-align: center;
     justify-content: center;
@@ -168,7 +164,6 @@ body.modal-open {
     border: none;
     pointer-events: auto;
 }
-
 
 .modal .modal-footer {
     background-color: black;
@@ -257,7 +252,6 @@ body.modal-open {
     padding-top: 2px;
     margin-top: 0;
 }
-
 
 .card {
     position: relative;
